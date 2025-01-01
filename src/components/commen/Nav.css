@@ -1,0 +1,162 @@
+/* navigation */
+
+nav {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: sticky;
+  z-index: 5;
+  top: 0;
+}
+
+.nav-content {
+  width: 100%;
+  display: flex;
+}
+
+.nav-content-1 {
+  width: calc((100% / 2) - 50px);
+  height: 100px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.nav-content-1 ul li {
+  display: inline-block;
+  margin: 0 30px;
+}
+
+.nav-content-1 ul li:first-child {
+  margin-left: 0;
+}
+
+.nav-content-1 ul li a {
+  font-family: var(--font1);
+  font-size: 16px;
+  color: black;
+  transition: color .3s ease;
+}
+
+.nav-content-1 ul li a:hover {
+  color: var(--red);
+}
+
+.nav-content-2 {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-content-2 img {
+  width: 90px;
+  margin: 0 30px;
+}
+
+.nav-content-3 {
+  width: calc((100% / 2) - 50px);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.nav-content-3 ul li {
+  display: inline-block;
+  margin: 0 30px;
+}
+
+.nav-content-3 ul li:last-child {
+  margin-right: 0
+}
+
+.nav-content-3 ul li a {
+  font-family: var(--font1);
+  color: black;
+  font-size: 16px;
+  transition: color .3s ease;
+}
+
+.nav-content-3 ul li a:hover {
+  color: var(--red);
+}
+
+/* nav content 4 */
+
+.nav-content-4 {
+  width: calc(100% - 100px);
+  height: 100px;
+  align-items: center;
+  justify-content: right;
+  display: none;
+}
+
+/* menu icon */
+
+.menu-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+}
+
+.menu-line {
+  width: 100%;
+  height: 4px;
+  border-radius: 30px;
+  background-color: rgb(40, 40, 40);
+  position: absolute;
+  transition: all .3s ease;
+}
+
+.menu-line-1 {
+  top: 7px;
+  width: calc(50%);
+}
+
+.menu-line-2 {
+  top: calc((100% / 2) - (4px / 2));
+}
+
+.menu-line-3 {
+  top: calc(100% - 10px);
+  width: calc(75%);
+}
+
+.menu-icon.active .menu-line-1 {
+  transform: rotate(40deg);
+  top: 11px;
+  left: 2px;
+}
+
+.menu-icon.active .menu-line-2 {
+  transform: rotate(-40deg);
+}
+
+.menu-icon.active .menu-line-3 {
+  transform: rotate(40deg);
+  top: calc(100% - 19px);
+  right: 1px;
+}
+
+@media(max-width:992px) {
+
+  .nav-content-1 {
+    display: none;
+  }
+
+  .nav-content-3 {
+    display: none;
+  }
+
+  .nav-content-2 {
+    width: 100px;
+  }
+
+  .nav-content-4 {
+    display: flex;
+  }
+
+}

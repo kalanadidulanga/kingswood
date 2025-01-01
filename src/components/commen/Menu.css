@@ -1,0 +1,158 @@
+/* menu */
+
+menu {
+    width: 450px;
+    height: calc(100vh);
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    left: -450px;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    z-index: 10;
+    transition: left .5s ease;
+  }
+  
+  menu.active {
+    left: 0;
+  }
+  
+  @media(max-width: 576px) {
+    menu {
+      width: calc(100% - 70px);
+      left: -100%;
+    }
+  }
+  
+  .menu-logo {
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    height: 200px;
+    align-items: center;
+  }
+  
+  .menu-logo-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .menu-logo img {
+    width: 120px;
+  }
+  
+  .menu-logo h1 {
+    font-size: 25px;
+    text-align: center;
+    color: var(--red);
+    margin-top: 10px;
+  }
+  
+  .menu-content {
+    width: calc(100% - 20px);
+    height: calc(100% - 200px);
+    margin-left: 20px;
+    overflow: auto;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .menu-content ul li {
+    list-style: none;
+    margin: 20px 0;
+  }
+  
+  .menu-content ul li:first-child {
+    margin-top: 0;
+    margin-top: 20px;
+  }
+  
+  .menu-content ul li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .menu-content ul li a {
+    font-family: var(--font1);
+    color: black;
+    cursor: pointer;
+    display: flex;
+    font-weight: 600;
+  }
+  
+  .menu-content ul li a:hover {
+    color: var(--red);
+  }
+  
+  /* menu contact */
+  
+  .menu-contact {
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  .menu-contact ul li {
+    display: flex;
+    margin: 10px 0;
+  }
+  
+  .menu-contact ul li:first-child {
+    margin-top: 0;
+  }
+  
+  .menu-contact ul li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .menu-contact ul li p {
+    margin-left: 10px;
+  }
+  
+  .menu-copyright {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .menu-copyright p {
+    text-align: center;
+  }
+  
+  .menu-copyright a {
+    color: black;
+    font-weight: 600;
+  }
+  
+  .menu-social-media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .menu-social-media ul li {
+    display: inline-block;
+    margin: 0 12px;
+  }
+  
+  .menu-social-media ul li a {
+    font-size: 18px;
+  }
+  
+  .menu-background {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: all .5s ease;
+  }
+  
+  .menu-background.active {
+    opacity: 1;
+    pointer-events: all;
+  }

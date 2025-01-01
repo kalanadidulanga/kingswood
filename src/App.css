@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.mt-20{
+  margin-top: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+
+}
+
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --red: #af0c00;
+  --light: #e7efff;
+  --gray: #707070;
+  --font1: lexend, sans-serif;
+}
+
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
+@media(max-width:1280px) {
+  .container {
+    width: calc(100% - 80px);
+  }
+}
+
+@media(max-width:992px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+}
+
+

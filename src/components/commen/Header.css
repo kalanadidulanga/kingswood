@@ -1,0 +1,122 @@
+header {
+  width: 100%;
+  background-color: var(--red);
+  position: relative;
+  display: flex;
+}
+
+.header-content {
+  width: 100%;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  /* background-color: aqua; */
+}
+
+/* header content one */
+
+.header-content-1 {
+  width: calc(100% - 200px);
+  height: 40px;
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+}
+
+.header-content-1 ul {
+  display: flex;
+}
+
+.header-content-1 ul li {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.header-content-1 ul li:first-child {
+  margin-left: 0;
+}
+
+.header-content-1 ul li i {
+  color: white;
+  font-size: 14px;
+}
+
+.header-content-1 ul li p {
+  margin-left: 5px;
+  color: white;
+  font-size: 14px;
+}
+
+/* header content two */
+
+.header-content-2 {
+  width: 200px;
+  height: 40px;
+  /* background-color: green; */
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.header-content-2 ul li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.header-content-2 ul li:last-child {
+  margin-right: 0;
+}
+
+.header-content-2 ul li a {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: var(--red);
+}
+
+@media(max-width:992px) {
+  .header-content {
+    display: none;
+  }
+
+  .header-content-1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-content-2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* header animation */
+
+@keyframes header-animation{
+  0%{
+    left: -150%;
+  }
+
+  100%{
+    left: 150%;
+  }
+}
+
+.header-background {
+  width: 150%;
+  height: 100%;
+  background-image: linear-gradient(to right, transparent,  rgb(255, 0, 140), transparent);
+  background-image: -o-linear-gradient(to right, transparent, rgb(255, 0, 140), transparent);
+  background-image: -moz-linear-gradient(to right, transparent, rgb(255, 0, 140), transparent);
+  background-image: -webkit-linear-gradient(to right, transparent, rgb(255, 0, 140), transparent);
+  position: absolute;
+  z-index: 0;
+  animation: header-animation 4s infinite ease;
+}

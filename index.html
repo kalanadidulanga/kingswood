@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Wrap with Image</title>
+<style>
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .float-image-left {
+    float: left;
+    width: 150px;
+    height: auto;
+    margin: 0 15px 15px 0; 
+  }
+
+  .float-image-right {
+    float: right;
+    width: 150px; 
+    height: auto;
+    margin: 0 0 15px 15px;
+  }
+
+  .text-paragraph {
+    /* overflow: hidden;  */
+  }
+
+  /* Clearfix for floated elements */
+  /* .text-paragraph::after {
+    content: "";
+    display: table;
+    clear: both;
+  } */
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="text-paragraph">
+    <!-- Image floated to the left -->
+    <img src="./src/images/branch/image1.jpg" alt="Left Image" class="float-image-left">
+    <!-- Image floated to the right -->
+    <img src="./src/images/branch/image2.jpg" alt="Right Image" class="float-image-right">
+    
+    <!-- Text Content -->
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis mi et semper finibus. Morbi nec sem nec odio fermentum malesuada. Nam non tellus nec velit commodo Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel commodi sint saepe officiis. Ducimus ad earum commodi pariatur assumenda laudantium eveniet asperiores eius vel amet, facilis dolore perspiciatis debitis placeat atque dolorum neque quod. Vitae libero animi officia odio fugiat recusandae nisi nam earum quos, eaque esse rerum id ut nostrum laboriosam expedita aut consequuntur praesentium quae? Nisi ad deserunt cum explicabo deleniti velit molestiae, in dolor id neque odio? Nihil voluptates commodi, laboriosam, officia, corporis pariatur temporibus aliquam recusandae libero voluptatum suscipit alias nisi id ex. Illo nisi ipsa minus inventore numquam dignissimos in. Error quasi voluptatum mollitia quaerat? pretium. Pellentesque in orci enim. Phasellus congue risus sit amet enim bibendum, sit amet interdum ligula tincidunt. Nullam interdum quam a urna vulputate, eget efficitur ipsum consequat.
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

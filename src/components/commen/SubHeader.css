@@ -1,0 +1,47 @@
+.sub-header {
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.sub-header .container {
+    height: 100%;
+}
+
+.sub-header-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.sub-header-content h1{
+    text-align: center;
+    color: white;
+    font-size: 55px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@media(max-width:576px){
+    .sub-header-content h1{
+        font-size: 45px;
+    }
+}
+
+.sub-header-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.sub-header-bg img{
+    width: 100%;
+    height: 100%;
+    filter: brightness(80%) hue-rotate(30deg);
+    object-fit: cover;
+}

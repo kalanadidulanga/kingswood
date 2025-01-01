@@ -1,0 +1,35 @@
+.facilities-s1{
+    width: 100%;
+    margin-top: 60px ;
+}
+
+.facilities-list{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 20px;
+}
+
+
+@media(max-width:992px){
+    .facilities-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:576px){
+    .facilities-list{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+.facilities-s1 .container{
+    width: calc(1200px + 20px) !important;
+}
+
+@media(max-width:992px){
+    .facilities-s1 .container{
+        width: calc(100% - 40px) !important;
+    }
+}

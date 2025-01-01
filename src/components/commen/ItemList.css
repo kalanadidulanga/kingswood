@@ -1,0 +1,13 @@
+.item-list {
+    margin: 0 -10px;
+}
+
+.item {
+    width: 100%;
+    padding: 0 10px;
+}
+
+.item-content {
+    width: 100%;
+}
+

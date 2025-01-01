@@ -1,0 +1,260 @@
+.contact-s1 {
+    width: 100%;
+    margin-top: 60px;
+}
+
+.contact-s1-c {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+}
+
+.contact-s1-c1 {
+    width: calc(100% - 420px);
+}
+
+.contact-s1 .title-content-2{
+    display: none;
+}
+
+.contact-s1-c2 {
+    width: 400px;
+    margin-left: 20px;
+    height: inherit;
+}
+
+.contact-s1-c2 iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+.input1 {
+    width: 100%;
+    position: relative;
+}
+
+
+.input2 {
+    width: 100%;
+    position: relative;
+}
+
+.input2-c {
+    width: 100%;
+    display: flex;
+}
+
+.input2-c1 {
+    width: calc(50% - 5px);
+    position: relative;
+}
+
+.input2-c2 {
+    width: calc(50% - 5px);
+    margin-left: 10px;
+    position: relative;
+}
+
+.input input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border: none;
+    background-color: var(--light);
+    border-radius: 5px;
+    outline: 1px solid rgb(255, 255, 255);
+    transition: all .2s ease;
+}
+
+.input input:focus {
+    outline: 1px solid rgb(180, 180, 180);
+}
+
+
+.input select{
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border: none;
+    background-color: var(--light);
+    border-radius: 5px;
+    outline: 1px solid rgb(255, 255, 255);
+    transition: all .2s ease;
+    font-size: 12px;
+}
+
+.input select:focus{
+    outline: 1px solid rgb(180, 180, 180);
+}
+
+.input option{
+    width: 100%;
+    height: 40px  ;
+    padding: 0 10px;
+    border: none;
+    background-color: var(--light);
+    border-radius: 5px;
+    outline: 1px solid rgb(255, 255, 255);
+    transition: all .2s ease ;
+    font-size: 12px;
+}
+
+
+.input textarea {
+    width: 100%;
+    height: 100px;
+    padding: 0 10px;
+    border: none;
+    background-color: var(--light);
+    border-radius: 5px;
+    outline: 1px solid rgb(255, 255, 255);
+    transition: all .2s ease;
+    resize: none;
+}
+
+.input textarea:focus {
+    outline: 1px solid rgb(180, 180, 180);
+}
+
+
+.input p {
+    position: absolute;
+    top: calc(50% / 2);
+    left: 10px;
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-size: 12px;
+    transition: all .2s ease;
+    pointer-events: none;
+}
+
+.input span {
+    color: red;
+}
+
+.input p.active {
+    top: -10px;
+    background-color: var(--light);
+}
+
+.input-textarea p {
+    top: 10px;
+}
+
+.contact-button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.contact-button input {
+    width: 100%;
+    height: 40px;
+    background-color: var(--red);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media(max-width:992px) {
+    .contact-s1-c {
+        display: block;
+    }
+
+    .contact-s1-c1 {
+        width: 100%;
+    }
+
+    .contact-s1-c2 {
+        width: 100%;
+        height: 300px;
+        margin: 0;
+        margin-top: 60px;
+    }
+}
+
+
+.contact-s2 {
+    width: 100%;
+    margin-top: 80px;
+    padding: 20px 0;
+    background-color: black
+}
+
+.contact-s2-c {
+    width: 100%;
+    display: flex;
+}
+
+.contact-s2-c1,
+.contact-s2-c2,
+.contact-s2-c3 {
+    width: calc(100% / 3);
+    display: flex;
+    align-items: center;
+}
+
+.contact-s2-c1 {
+    justify-content: left;
+}
+
+.contact-s2-c2 {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-s2-c3 {
+    justify-content: right;
+}
+
+.contact-icon {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-icon i {
+    font-size: 40px;
+    color: white;
+}
+
+.contact-s2-c h3 {
+    font-size: 16px;
+    color: white;
+}
+
+.contact-s2-c p {
+    font-size: 14px;
+    color: white;
+}
+
+
+
+.contact-details {
+    margin-left: 10px;
+}
+
+@media(max-width:992px) {
+    .contact-s2-c {
+        display: block;
+    }
+
+    .contact-s2-c1,
+    .contact-s2-c2,
+    .contact-s2-c3 {
+        width: 100%;
+        justify-content: baseline;
+        padding: 10px 0;
+    }
+}
+
+@media(max-width:576px) {
+    .contact-s2-c1,
+    .contact-s2-c2,
+    .contact-s2-c3 {
+        justify-content: left;
+        
+    }
+}

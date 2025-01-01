@@ -1,0 +1,93 @@
+/* facilities */
+
+.facilities {
+    width: 100%;
+    margin-top: 80px;
+}
+
+.facilities .container{
+    width: calc(100% - 80px) !important;
+}
+
+@media(max-width:992px){
+    .facilities .container{
+        width: calc(100% - 40px) !important;
+    }
+}
+
+.facilities-content {
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+
+.facilities-item {
+    width: 100%;
+    height: 350px;
+    display: block;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.facilities-item-bg {
+    width: 100%;
+    height: 100%;
+}
+
+.facilities-item-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.facilities-item-c {
+    width: calc(100% - 40px);
+    height: 120px;
+    background-color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px;
+    transition: all .3s ease;
+    overflow: hidden;
+}
+
+.facilities-item-c h1 {
+    font-family: var(--font1);
+    color: black;
+    transition: all .3s ease;
+    font-size: 20px;
+}
+
+.facilities-item-c p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    font-size: 14px;
+    color: var(--gray);
+    margin-top: 10px;
+    transition: all .3s ease;
+}
+
+.facilities-item:hover .facilities-item-c {
+    background-color: var(--red);
+}
+
+.facilities-item:hover .facilities-item-c h1 {
+    color: white;
+}
+
+.facilities-item:hover .facilities-item-c p {
+    color: rgb(240, 240, 240);
+}
+
+
+@media(max-width:992px) {
+    .facilities-item {
+        height: 300px;
+    }
+}

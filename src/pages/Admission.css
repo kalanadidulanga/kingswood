@@ -1,0 +1,59 @@
+.admission-description{
+    width: 100%;
+    margin-top: 60px;
+
+}
+
+.admission-description h1{
+    font-size: 16px;
+}
+
+.admission-description p{
+    font-family: var(--font1);
+    font-size: 16px;
+    margin-top:40px; 
+    font-weight: 500;
+}
+
+.admission-description ol{
+    font-family: var(--font1);
+    font-size: 15px;
+    margin-top: 20px;
+    margin-left: 60px;
+    color: #404040;
+}
+
+.admission-description ol li{
+    margin-bottom: 5px;
+}
+
+.admission-application{
+    width: 100%;
+    margin-top: 60px;
+}
+
+.admission-application-content .container{
+    width: calc(100%) !important;
+}
+
+.admission-application .title-content-2{
+    display: none;
+}
+
+.admission-application-content{
+    width: 700px;
+    margin: auto;
+}
+
+.admission-application-input{
+    width: 100%;
+    margin-top: 40px;
+}
+
+@media(max-width:768px){
+    .admission-application-content{
+        width: calc(100% - 40px);
+        margin: auto;
+    }
+    
+}

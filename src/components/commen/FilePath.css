@@ -1,0 +1,131 @@
+.file-path{
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-top: 30px;
+}
+
+@media(max-width: 1240px){
+    .file-path{
+        width: calc(100% - 40px);
+    }
+}
+
+
+
+.file-path ul li{
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.file-path ul li:first-child{
+    margin-left: 0px;
+}
+
+.file-path ul li a{
+    color: black;
+}
+
+.file-path ul li a:hover{
+    color: blue;
+}
+
+.file-path-c1{
+    width: calc(100% / 2);
+    /* background-color: red; */
+    display: flex;
+}
+
+.file-path-c2{
+    width: calc(100% / 2);
+    /* background-color: green; */
+    display: flex;
+    justify-content: right;
+}
+
+/* filter */
+
+.file-path-filter{
+    display: flex;
+    align-items: center;
+}
+
+.file-path-filter select{
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--light);
+    outline: none;
+}
+
+.file-path-filter-search{
+    width: 200px;
+    margin-left: 5px;
+    position: relative;
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.file-path-filter input{
+    width: 100%;
+    height: 30px;
+    border: none;
+    background-color: var(--light);
+    outline: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 0 45px 0 10px;
+}
+
+.file-path-filter button{
+    width: 40px;
+    height: 30px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    background-color: var(--light);
+    cursor: pointer;
+    transition: all .5s ease;
+    position: absolute;
+    right: 0;
+}
+
+.file-path-filter button:hover{
+    background-color: var(--red);
+    color: white;
+}
+
+
+
+@media(max-width:768px){
+    .file-path{
+        display: block;
+    }
+
+    .file-path-c1{
+        width: 100%;
+    }
+
+    .file-path-c2{
+        width: 100%;
+        justify-content: left;
+        margin-top: 10px;
+    }
+
+    .file-path-filter{
+        width: 100%;
+    }
+}
+
+@media(max-width:768px){
+    .file-path-filter select{
+        width: calc(100% / 2);
+    }
+
+    .file-path-filter-search{
+        width: calc(100% / 2);
+    }
+}
