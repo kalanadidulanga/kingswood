@@ -93,9 +93,9 @@ export default function Events() {
                 <div className='file-path-c2'>
                     <div className='file-path-filter'>
                         <select name="" id="">
-                            <option value="Event">Event</option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option value="all-event">All Event</option>
+                            <option value="upcoming-event">Upcoming Event</option>
+                            <option value="old-event">Old Event</option>
                         </select>
                         <div className='file-path-filter-search'>
                             <input type="text" placeholder='Search' />
