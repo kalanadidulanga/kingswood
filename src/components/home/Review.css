@@ -125,6 +125,8 @@
 .review-details-profile img {
   width: 50px;
   height: 50px;
+  min-width: 50px;
+  min-height: 50px;
   object-fit: cover;
   border-radius: 50%;
 }

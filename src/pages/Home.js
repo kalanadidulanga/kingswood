@@ -252,14 +252,14 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <Slide content={slideContent}></Slide>
-      <FacilitiesList facilitiesData={FacilitiesContent}></FacilitiesList>
-      <DetailsList details={details}></DetailsList>
+      <Slide content={slideContent} />
+      <FacilitiesList facilitiesData={FacilitiesContent} />
+      <DetailsList details={details} />
 
       {UpcomingEventContent.length >= 3 ? (
         <UpcomingEventList
           eventItems={UpcomingEventContent}
-        ></UpcomingEventList>
+        />
       ) : (
         ""
       )}
@@ -269,7 +269,7 @@ export default function Home() {
       <Success successItems={successItems}></Success>
       <Awards awardItems={awardItems}></Awards>
       <Review reviewItems={reviewItems}></Review>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }

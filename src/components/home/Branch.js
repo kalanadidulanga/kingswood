@@ -73,8 +73,8 @@ export default function Branch(props) {
                         ))}
                     </Slider>
                 </div>
-                <div className='branch-content'>
-                    <div className='branch-map'>
+                <div className='branch-content '>
+                    <div className='branch-map hidden lg:flex'>
                         <img src={map} alt="" className='map-image' />
                     </div>
                     <div className='branch-details'>

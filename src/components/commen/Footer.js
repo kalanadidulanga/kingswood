@@ -62,7 +62,7 @@ export default function Footer() {
                                     <h4>support@kingswoodbritish.com</h4>
                                 </div>
                                 <div className="footer-soical-media">
-                                    <a href="">
+                                    <a href="" className="">
                                         <i class="ri-instagram-line"></i>
                                     </a>
                                     <a href="">
