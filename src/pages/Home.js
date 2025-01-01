@@ -44,9 +44,21 @@ export default function Home() {
 
 
   const slideContent = [
-    hero1,
-    hero2,
-    hero3
+    {
+      image: hero1,
+      h1: 'Education is the ',
+      p: 'Our school is a place where students are encouraged to say, “I see it, I get it, I can do it.”'
+    },
+    {
+      image: hero2,
+      h1: 'Education is the key to success in life.',
+      p: 'Our school is a place where students are encouraged to say, “I see it, I get it, I can do it.”'
+    },
+    {
+      image: hero3,
+      h1: 'Education is the key to asdasdasd',
+      p: 'Our school is a place where students are encouraged to say, “I see itsdfsdfsf.”'
+    }
   ];
 
   const FacilitiesContent = [
@@ -239,8 +251,8 @@ export default function Home() {
 
   return (
     <>
-      <Nav></Nav>
-      <Slide image={slideContent}></Slide>
+      <Nav />
+      <Slide content={slideContent}></Slide>
       <FacilitiesList facilitiesData={FacilitiesContent}></FacilitiesList>
       <DetailsList details={details}></DetailsList>
 

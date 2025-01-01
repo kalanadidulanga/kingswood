@@ -12,7 +12,7 @@ export default function Nav() {
 
   const menuClick = () => {
     console.log("hello");
-    if (menu == "active") {
+    if (menu === "active") {
       setMenu("");
       setBackground("");
     } else {

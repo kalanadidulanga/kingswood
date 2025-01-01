@@ -50,14 +50,14 @@ export default function Slide(props) {
         <>
             <section className='slider'>
                 <Slider {...sliderSettings}>
-                    {props.image.map((img, index) => (
-                        <div className='slider-item' key={index}>
-                            <div className=' slider-text'>
-                                <h1 className=' text-red-500 text-center'>Education is the key to success in life.</h1>
-                                <p>Our school is a place where students are encouraged to say, “I see it, I get it, I can do it.”</p>
+                    {props.content.map((content, index) => (
+                        <div className='slider-item ' key={index}>
+                            <div className=' bg-black/50 slider-text flex flex-col justify-center items-center gap-5 p-5'>
+                                <h1 className=' text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] text-3xl md:text-4xl lg:text-5xl tracking-wide capitalize font-bold text-center'>{content.h1}</h1>
+                                <p className=' text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] text-sm md:text-md lg:text-lg tracking-wide font-semibold text-center'>{content.p}</p>
                             </div>
                             <div className="slider-background">
-                                <img src={img} alt={`Slide ${index + 1}`} />
+                                <img src={content.image} alt={`Slide ${index + 1}`} />
                             </div>
                         </div>
                     ))}

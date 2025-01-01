@@ -108,6 +108,6 @@
 .slider-text {
   position: absolute;
   /* border: 2px solid var(--red); */
-  width: 99dvw;
-  height: 100%;
+  width: 99vw;
+  height: 99%;
 }

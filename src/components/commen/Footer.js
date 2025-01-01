@@ -7,7 +7,7 @@ import './Footer.css'
 export default function Footer() {
     return (
         <>
-            <footer>
+            <footer className="">
                 <div className="container">
                     <div className="footer-content">
                         <div className="footer-content-list footer-content-1">
@@ -29,19 +29,19 @@ export default function Footer() {
                                 <h1 className="footer-title">Quick links</h1>
                                 <ul>
                                     <li>
-                                    <Link to="../">Home</Link>
+                                        <Link to="../">Home</Link>
                                     </li>
                                     <li>
-                                    <Link to="../about">About</Link>
+                                        <Link to="../about">About</Link>
                                     </li>
                                     <li>
-                                    <Link to="../contact">Contact</Link>
+                                        <Link to="../contact">Contact</Link>
                                     </li>
                                     <li>
-                                    <Link to="../admission">Admission</Link>
+                                        <Link to="../admission">Admission</Link>
                                     </li>
                                     <li>
-                                    <Link to="../facilities">Facilities</Link>
+                                        <Link to="../facilities">Facilities</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -95,9 +95,9 @@ export default function Footer() {
             </footer>
             <div className="footer-copyright">
                 <div className="footer-container">
-                <p>
-                    Copyright &copy; 2024 <a href="https://www.fuchsius.com">Fuchsius</a> All Rights Reserved.
-                </p>
+                    <p>
+                        Copyright &copy; 2024 <a href="https://www.fuchsius.com">Fuchsius</a> All Rights Reserved.
+                    </p>
                 </div>
             </div>
         </>

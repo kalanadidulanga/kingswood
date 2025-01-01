@@ -52,10 +52,10 @@ export default function Review(props) {
     return (
         <>
 
-            <div className={`review-add-bg ${review ? 'active' : ''}`} >
+            <div className={`review-add-bg ${review ? 'active' : ''} `} >
                 <div className='review-add'>
                     <div className='review-close'>
-                        <i class="bi bi-x" onClick={()=>{setReview(false); console.log(review)}}></i>
+                        <i class="bi bi-x" onClick={() => { setReview(false); console.log(review) }}></i>
                     </div>
                     <div className='review-c1'>
                         <div className='review-c1-image'>
