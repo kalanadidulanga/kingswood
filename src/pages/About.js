@@ -17,22 +17,22 @@ export default function About() {
       <SubHeader title="About Kingswood British" image={headerImage}></SubHeader>
 
       <FilePath text="About" path="about"></FilePath>
-      
+
       <section className='about-s1'>
         <Title
           title='About'
-          description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, debitis.'
+          description='Kingswood British College was founded on 5th January 2017. From humble beginnings with 33 students and three classrooms, it has grown into a leading English Medium College offering quality education.'
           path='home'
         ></Title>
         <div className='container'>
           <div className='about-s1-c'>
             <div className='about-s1-c1'>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis debitis nam corrupti, dolorum fugit ullam! Numquam minus fugit in inventore quisquam eaque sunt dolorem, nulla consequatur adipisci illum assumenda neque, commodi molestias cupiditate ratione nemo ex. Odio, iure ducimus facilis dicta est sed eos nemo dolor saepe excepturi modi magni quibusdam ipsam id nesciunt repellat reprehenderit repellendus error mollitia officiis reiciendis blanditiis vitae. Incidunt nemo temporibus consectetur magni nostrum ducimus minima asperiores
+                Kingswood British International College, founded by Dr. B.A.K.R.Tharanga, is a legally incorporated private limited company under the Companies Act No 07 of 2007. The college operates in Chilaw and Anamaduwa, focusing on providing quality education from pre-primary to Advanced Level. It offers local, Edexcel, and Cambridge syllabi.
                 <br /> <br />
-                illum, natus eos sint vitae culpa veritatis debitis doloribus voluptatum fugiat quasi. Facere dolorum ea odit deserunt est illo eos soluta ipsa dolorem vitae! Sint dolor dicta rem.
+                The institution is registered under the Human Resource Development Authority in the North Western Province and is affiliated with Azteca University (UGC Recognized) and the Open International University for Complementary Medicines. Additionally, the college facilitates Cambridge Assessments ESOL exams in partnership with the University of Cambridge, UK, through Amark Ebek.
                 <br /><br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati blanditiis beatae at asperiores, odio dolorum nulla ipsum omnis magni ducimus tempora! Expedita architecto quidem quas, officiis eius, blanditiis ullam quae ducimus, velit obcaecati quam minima accusantium deleniti. Eligendi, perferendis totam? Non vero ducimus nesciunt minima facere vel numquam maxime aliquid.
+                Kingswood nurtures pre-primary students with a foreign syllabus (Oxford Print) and competency-based activities aligned with local guidelines. Its mission is to foster self-confidence, enhance thinking skills, and develop well-rounded individuals ready to contribute to a better world.
               </p>
             </div>
             <div className='about-s1-c2'>
@@ -50,11 +50,11 @@ export default function About() {
           <div className='about-s2-c'>
             <div className='about-s2-c1'>
               <h1>Our Vision</h1>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, quaerat quidem, animi alias natus, deserunt itaque voluptate nihil dolore vel sint quos magnam explicabo. Cumque, fugiat incidunt non accusantium cum libero corporis magnam quis mollitia veritatis, quo nihil laudantium sapiente esse sequi est. Exercitationem deleniti vitae mollitia culpa, expedita error.</p>
+              <p>Our vision is to become a global role model for teaching and learning.</p>
             </div>
             <div className='about-s2-c2'>
               <h1>Our Mission</h1>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, quaerat quidem, animi alias natus, deserunt itaque voluptate nihil dolore vel sint quos magnam explicabo. Cumque, fugiat incidunt non accusantium cum libero corporis magnam quis mollitia veritatis, quo nihil laudantium sapiente esse sequi est. Exercitationem deleniti vitae mollitia culpa, expedita error.</p>
+              <p>Our mission is to make our students self-confident, enhance their thinking skills, and develop them into good human beings who make the world a better and happier place.</p>
             </div>
           </div>
         </div>
@@ -63,22 +63,26 @@ export default function About() {
       <section className='about-s3'>
         <Title
           title='Our Story'
-          description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, debitis.'
+          description='The journey of Kingswood British College from its inception to its current success.'
           path='home'
         ></Title>
         <div className='container'>
           <div className='about-s3-c'>
             <img src={headerImage} alt="" />
 
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod voluptatem perferendis voluptas! Deserunt enim, sit quibusdam dicta officiis repudiandae ipsum eaque, eos alias quidem cum amet minima quae laudantium tenetur, voluptatibus accusamus odit deleniti veritatis! At facere modi, necessitatibus voluptas veniam eveniet corrupti hic itaque soluta ut alias rem porro, inventore nam. <br /><br /> Eveniet excepturi placeat aut incidunt eum praesentium maxime aspernatur. Reprehenderit mollitia molestiae aspernatur ullam, commodi atque placeat quos quidem, nobis, molestias maiores ipsa. Ea nesciunt facere voluptatem beatae ipsa similique cupiditate laborum totam fuga impedit. Quis nam nisi illum, pariatur saepe ducimus fugit aperiam. Ab dignissimos rerum voluptas praesentium magni rem accusantium alias eum hic. Itaque, repellat illo error voluptatum, maxime reiciendis officiis esse consectetur repellendus, est quam <br /><br /> assumenda tempore tempora architecto. Non, iste nam. Quia qui iure, facilis quaerat beatae nobis est magni quam perspiciatis. A esse quas saepe deleniti doloribus recusandae exercitationem repellat perspiciatis libero iusto. Dolorum veniam sit cupiditate. Minima cupiditate commodi ipsum eius optio odit dolorem harum! Ullam suscipit autem, quo nisi dignissimos sit nulla ducimus possimus ea velit vero vitae pariatur vel accusantium et illo iusto nemo, voluptate magni distinctio. Recusandae, nulla necessitatibus ea sit provident perferendis, aliquid architecto error, fugit dignissimos sunt.</p>
-
+            <p>
+              Kingswood British College began as a vision of Dr. B.A.K.K. Tharanga in 2009. The college officially opened its doors on 5th January 2017 with 33 students and five teachers, starting with two pre-primary classes and one Grade 1 class. The first branch, established in Bangadeniya, has since expanded to serve a growing community of learners.
+              <br /><br />
+              Today, Kingswood continues to excel in providing comprehensive education, leveraging local and international affiliations to enrich the academic and personal growth of its students. The college's commitment to excellence is evident in its diverse curriculum and dedication to nurturing young minds.
+            </p>
           </div>
         </div>
       </section>
 
       <Footer></Footer>
-
     </>
+
+
   )
 }
 
