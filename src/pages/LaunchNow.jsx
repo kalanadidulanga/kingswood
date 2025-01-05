@@ -10,7 +10,7 @@ const LaunchNow = () => {
     setTimeout(() => {
       navigate("/");
       setIsLoading(false);
-    }, 5000);
+    }, 7500);
   };
   return (
     <div className=" bg-slate-50 w-dvw h-dvh flex flex-col flex-1 justify-center items-center">

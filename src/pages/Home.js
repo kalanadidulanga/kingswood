@@ -201,13 +201,13 @@ export default function Home() {
     {
       title: 'University Affiliations',
       description: 'Affiliated with Azteca University (UGC Recognized) and Open International University for Complementary Medicines.',
-      imgSrc: "/students.jpg",
+      imgSrc: "/img/88.jpeg",
       path: 'success'
     },
     {
       title: 'Competency Based Education',
       description: 'Implementation of modern competency-based education focusing on individual student mastery and progress.',
-      imgSrc: "/students.jpg",
+      imgSrc: "/img/99.jpeg",
       path: 'success'
     }
   ];

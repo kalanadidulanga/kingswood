@@ -74,7 +74,7 @@ export const eventContent = [
         id: 6,
         image: '/img/gg/6/1.jpg',
         title: 'Plantation Programme',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
+        description: "Kingswood British College proudly hosted a Plantation Program aimed at promoting environmental awareness and sustainability. Students participated in planting trees and learning about the importance of preserving nature. This hands-on initiative helped foster a sense of responsibility toward the environment and the future of our planet. The program encouraged students to take an active role in conserving nature and building a greener, healthier world.",
         images: [
             '/img/gg/6/1.jpg',
             '/img/gg/6/2.jpg',
@@ -82,6 +82,20 @@ export const eventContent = [
             '/img/gg/6/4.jpg',
             '/img/gg/6/5.jpg',
         ],
-        date: 'February, 2024',
+        date: '2024',
+    },
+    {
+        id: 7,
+        image: '/img/gg/7/2.jpg',
+        title: 'Food Mania Event',
+        description: "The Food Mania event at Kingswood British College was a delicious celebration of culinary creativity and diversity. Students showcased their cooking skills and explored a variety of cuisines, from local delights to international flavors. The event was a fantastic opportunity for students to work together, share their love for food, and enjoy a day filled with tasty treats and exciting food-related activities. It was an unforgettable experience that brought the school community closer through the joy of food.",
+        images: [
+            '/img/gg/7/1.jpg',
+            '/img/gg/7/2.jpg',
+            '/img/gg/7/3.jpg',
+            '/img/gg/7/4.jpg',
+            '/img/gg/7/5.jpg',
+        ],
+        date: '',
     },
 ];
