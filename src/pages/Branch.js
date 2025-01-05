@@ -25,25 +25,31 @@ const branches = [
     id: 1,
     name: "Bangadeniya",
     description: "Our first branch established in 2017, located a few kilometers away from Chilaw. The branch started with just 33 students and 5 teachers, hosting two pre-primary classes and 1 grade one class. Today, it stands as our main campus providing comprehensive education from pre-primary to Advanced level.",
-    type: "Main Campus"
+    type: "Main Campus",
+    image: '/img/gg/6.jpg'
   },
   {
     id: 2,
     name: "Anamaduwa",
     description: "One of our key branches providing quality education from pre-primary to Advanced level, following both local and international curricula including Edexcel and Cambridge syllabi.",
-    type: "Branch Campus"
+    type: "Branch Campus",
+    image: '/img/gg/4.jpg'
+
   },
   {
     id: 3,
     name: "Negombo",
     description: "Campus branch affiliated with University of Azteca, North America, offering higher education opportunities alongside our regular college programs.",
-    type: "Campus Branch"
+    type: "Campus Branch",
+    image: '/img/gg/5.jpg'
+
   },
   {
     id: 4,
     name: "Anuradhapura",
     description: "Campus branch offering both college and university programs in affiliation with University of Azteca, providing advanced education opportunities to students in the region.",
-    type: "Campus Branch"
+    type: "Campus Branch",
+    image: '/img/gg/7.jpg'
   }
 ];
 
@@ -112,7 +118,7 @@ export default function Branch() {
         />
         <div className="container">
           <div className="branch-s1-c">
-            <img src={'/img/gg/3.jpg'} alt={`${selectedBranch.name} campus`} />
+            <img src={selectedBranch.image} alt={`${selectedBranch.name} campus`} />
             <p className="mt-6">
               {selectedBranch.description}
             </p>
