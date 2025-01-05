@@ -21,27 +21,27 @@ export default function Events() {
     const FacilitiesContent = [
         {
             id: 1,
-            title: 'Maths Activity Room',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-            image: hero1
+            title: 'Pre-Primary Education',
+            description: 'Nurturing young minds with Oxford Print syllabus and local competency activities',
+            image: '/img/11.jpg'
         },
         {
             id: 2,
-            title: 'Science Lab',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-            image: hero2
+            title: 'Primary Education',
+            description: 'Comprehensive primary education following Edexcel curriculum',
+            image: '/img/22.jpeg'
         },
         {
             id: 3,
-            title: 'Art Studio',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-            image: hero3
+            title: 'Secondary Education',
+            description: 'Advanced secondary education with both local and international syllabi',
+            image: '/img/33.jpg'
         },
         {
             id: 4,
-            title: 'Dancing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-            image: hero3
+            title: 'Cambridge ESOL',
+            description: 'Official Cambridge Assessment ESOL examination center',
+            image: '/img/44.jpeg'
         },
     ];
 

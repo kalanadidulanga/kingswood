@@ -45,17 +45,17 @@ export default function Home() {
 
   const slideContent = [
     {
-      image: hero1,
+      image: '/img/gg/1.jpg',
       h1: 'Continuous Improvement',
       p: 'Our mission is to make our students self-confident, enhance their thinking skills and make them into good human beings.'
     },
     {
-      image: hero2,
+      image: '/img/gg/2.jpg',
       h1: 'Quality Education',
       p: 'We provide quality education to students from pre-primary to Advanced level with both local and international curricula.'
     },
     {
-      image: hero3,
+      image: '/img/gg/3.jpg',
       h1: 'Global Role Model',
       p: 'Our vision is to become a global role model for teaching and learning.'
     }
@@ -66,25 +66,25 @@ export default function Home() {
       id: 1,
       title: 'Pre-Primary Education',
       description: 'Nurturing young minds with Oxford Print syllabus and local competency activities',
-      image: hero1
+      image: '/img/11.jpg'
     },
     {
       id: 2,
       title: 'Primary Education',
       description: 'Comprehensive primary education following Edexcel curriculum',
-      image: hero2
+      image: '/img/22.jpeg'
     },
     {
       id: 3,
       title: 'Secondary Education',
       description: 'Advanced secondary education with both local and international syllabi',
-      image: hero3
+      image: '/img/33.jpg'
     },
     {
       id: 4,
       title: 'Cambridge ESOL',
       description: 'Official Cambridge Assessment ESOL examination center',
-      image: hero3
+      image: '/img/44.jpeg'
     },
   ];
 
@@ -261,7 +261,7 @@ export default function Home() {
         ""
       )}
 
-      <EventList eventItems={eventContent}></EventList>
+      {/* <EventList eventItems={eventContent}></EventList> */}
       <Branch branches={branchesList}></Branch>
       <Success successItems={successItems}></Success>
       {/* <Awards awardItems={awardItems}></Awards> */}
