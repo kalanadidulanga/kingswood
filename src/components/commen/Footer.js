@@ -59,14 +59,14 @@ export default function Footer() {
                                     <h4>info@kingswoodbritish.com</h4>
                                 </div>
                                 <div className="footer-social-media">
-                                    <a href="https://www.facebook.com/kingswood" target="_blank" rel="noopener noreferrer">
-                                        <i className="ri-facebook-fill"></i>
+                                    <a href="https://www.facebook.com/kingswood" target="_blank" rel="noopener noreferrer" >
+                                        <i className="ri-facebook-fill min-w-16 max-w-16"></i>
                                     </a>
                                     <a href="https://www.instagram.com/kingswood" target="_blank" rel="noopener noreferrer">
-                                        <i className="ri-instagram-fill"></i>
+                                        <i className="ri-instagram-fill min-w-16 max-w-16"></i>
                                     </a>
                                     <a href="https://www.youtube.com/kingswood" target="_blank" rel="noopener noreferrer">
-                                        <i className="ri-youtube-fill"></i>
+                                        <i className="ri-youtube-fill min-w-16 max-w-16"></i>
                                     </a>
                                     <a href="https://www.linkedin.com/company/kingswood" target="_blank" rel="noopener noreferrer">
                                         <i className="ri-linkedin-fill"></i>

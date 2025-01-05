@@ -60,7 +60,7 @@ export default function FacilitiesList(props) {
             <section className='facilities'>
                 <Title
                     title='Our Facilities'
-                    description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, debitis.'
+                    // description=''
                     path='../facilities'
                 ></Title>
 

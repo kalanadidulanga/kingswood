@@ -66,26 +66,26 @@ export default function Home() {
   const FacilitiesContent = [
     {
       id: 1,
-      title: 'Maths Activity Room',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      title: 'Pre-Primary Education',
+      description: 'Nurturing young minds with Oxford Print syllabus and local competency activities',
       image: hero1
     },
     {
       id: 2,
-      title: 'Science Lab',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      title: 'Primary Education',
+      description: 'Comprehensive primary education following Edexcel curriculum',
       image: hero2
     },
     {
       id: 3,
-      title: 'Art Studio',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      title: 'Secondary Education',
+      description: 'Advanced secondary education with both local and international syllabi',
       image: hero3
     },
     {
       id: 4,
-      title: 'Dancing',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      title: 'Cambridge ESOL',
+      description: 'Official Cambridge Assessment ESOL examination center',
       image: hero3
     },
   ];
@@ -175,19 +175,19 @@ export default function Home() {
   const branchesList = [
     {
       name: 'Chilaw (Bangadeniya)',
-      image: "branch1"
+      image: branch1
     },
     {
       name: 'Anamaduwa',
-      image: "branch2"
+      image: branch2
     },
     {
       name: 'Negombo',
-      image: "branch1"
+      image: branch3
     },
     {
       name: 'Anuradhapura',
-      image: "branch3"
+      image: branch3
     }
   ];
 
