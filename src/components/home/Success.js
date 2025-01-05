@@ -53,7 +53,7 @@ export default function Success(props) {
             <div className='success'>
                 <Title
                     title='Celebrating Student Success'
-                    description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, debitis.'
+                    description='The success of our students is our success'
                     path='home'
                 ></Title>
                 <div className='success-content'>

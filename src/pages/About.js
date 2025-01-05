@@ -37,8 +37,8 @@ export default function About() {
             </div>
             <div className='about-s1-c2'>
               <div className='about-s1-c2-photo'>
-                <img src={"/img/1.jpg"} alt="" />
-                <img src={"/img/2.jpeg"} alt="" />
+                <img src={"/img/gg/1.jpg"} alt="" />
+                <img src={"/img/gg/9.png"} alt="" />
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function About() {
         ></Title>
         <div className='container'>
           <div className='about-s3-c'>
-            <img src={'/img/2.jpg'} alt="" />
+            <img src={'/img/gg/9.jpg'} alt="" />
 
             <p>
               Kingswood British College began as a vision of Dr. B.A.K.K. Tharanga in 2009. The college officially opened its doors on 5th January 2017 with 33 students and five teachers, starting with two pre-primary classes and one Grade 1 class. The first branch, established in Bangadeniya, has since expanded to serve a growing community of learners.

@@ -80,7 +80,7 @@ export default function Branch(props) {
                     <div className='branch-details'>
                         <div className='branch-details-content'>
                             <h1>Our Schools Network</h1>
-                            <p>We have 20 branches of schools scattered all around Sri Lanka which provides us with the opportunity to deliver quality education to all parts of our motherland</p>
+                            <p>We have 4 branches of schools scattered all around Sri Lanka which provides us with the opportunity to deliver quality education to all parts of our motherland</p>
                             <div className='branch-button'>
                                 <Link to="../admission">Apply Now</Link>
                             </div>

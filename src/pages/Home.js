@@ -38,6 +38,7 @@ import award3 from '../images/Awards/3.png';
 // import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { eventContent } from "../constants/data.js";
 
 
 export default function Home() {
@@ -45,7 +46,7 @@ export default function Home() {
 
   const slideContent = [
     {
-      image: '/img/gg/1.jpg',
+      image: '/img/gg/8.jpg',
       h1: 'Continuous Improvement',
       p: 'Our mission is to make our students self-confident, enhance their thinking skills and make them into good human beings.'
     },
@@ -134,20 +135,21 @@ export default function Home() {
   ];
 
 
-  const eventContent = [
-    {
-      id: 1,
-      image: hero1,
-      title: 'Lorem Ipsum is simply',
-      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-    },
-    {
-      id: 2,
-      image: hero2,
-      title: 'Lorem Ipsum is simply',
-      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-    },
-  ];
+  // const eventContent = [
+  //   {
+  //     id: 1,
+  //     image: hero1,
+  //     title: 'Clildren Day',
+  //     //Clildren Day description
+  //     description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
+  //   },
+  //   {
+  //     id: 2,
+  //     image: hero2,
+  //     title: 'Lorem Ipsum is simply',
+  //     description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
+  //   },
+  // ];
 
   const UpcomingEventContent = [
     {
@@ -173,19 +175,19 @@ export default function Home() {
   const branchesList = [
     {
       name: 'Chilaw (Bangadeniya)',
-      image: branch1
+      image: '/img/gg/6.jpg'
     },
     {
       name: 'Anamaduwa',
-      image: branch2
+      image: '/img/gg/4.jpg'
     },
     {
       name: 'Negombo',
-      image: branch3
+      image: '/img/gg/5.jpg'
     },
     {
       name: 'Anuradhapura',
-      image: branch3
+      image: '/img/gg/7.jpg'
     }
   ];
 
@@ -253,15 +255,15 @@ export default function Home() {
       <FacilitiesList facilitiesData={FacilitiesContent} />
       <DetailsList details={details} />
 
-      {UpcomingEventContent.length >= 3 ? (
+      {/* {UpcomingEventContent.length >= 3 ? (
         <UpcomingEventList
           eventItems={UpcomingEventContent}
         />
       ) : (
         ""
-      )}
+      )} */}
 
-      {/* <EventList eventItems={eventContent}></EventList> */}
+      <EventList eventItems={eventContent}></EventList>
       <Branch branches={branchesList}></Branch>
       <Success successItems={successItems}></Success>
       {/* <Awards awardItems={awardItems}></Awards> */}

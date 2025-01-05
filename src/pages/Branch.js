@@ -50,27 +50,27 @@ const branches = [
 const FacilitiesContent = [
   {
     id: 1,
-    title: "Pre-Primary Education",
-    description: "Nurturing young minds with Oxford Print syllabus and competency-based activities",
-    image: hero1,
+    title: 'Pre-Primary Education',
+    description: 'Nurturing young minds with Oxford Print syllabus and local competency activities',
+    image: '/img/11.jpg'
   },
   {
     id: 2,
-    title: "Cambridge Assessment Center",
-    description: "Official center for Cambridge ESOL exams in partnership with University of Cambridge, UK",
-    image: hero2,
+    title: 'Primary Education',
+    description: 'Comprehensive primary education following Edexcel curriculum',
+    image: '/img/22.jpeg'
   },
   {
     id: 3,
-    title: "Advanced Level Studies",
-    description: "Comprehensive A-Level programs following both local and international curricula",
-    image: hero3,
+    title: 'Secondary Education',
+    description: 'Advanced secondary education with both local and international syllabi',
+    image: '/img/33.jpg'
   },
   {
     id: 4,
-    title: "Higher Education",
-    description: "University pathway programs in partnership with Azteca University",
-    image: hero3,
+    title: 'Cambridge ESOL',
+    description: 'Official Cambridge Assessment ESOL examination center',
+    image: '/img/44.jpeg'
   },
 ];
 
@@ -112,7 +112,7 @@ export default function Branch() {
         />
         <div className="container">
           <div className="branch-s1-c">
-            <img src={'/img/5.jpeg'} alt={`${selectedBranch.name} campus`} />
+            <img src={'/img/gg/3.jpg'} alt={`${selectedBranch.name} campus`} />
             <p className="mt-6">
               {selectedBranch.description}
             </p>

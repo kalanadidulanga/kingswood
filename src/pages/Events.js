@@ -17,64 +17,65 @@ import hero2 from "../images/hero/image2.jpg";
 // import hero3 from "../images/hero/image3.jpg";
 
 import './Events.css'
+import { eventContent } from '../constants/data'
 export default function Events() {
 
-    const eventContent = [
-        {
-            id: 1,
-            image: hero1,
-            title: 'Lorem Ipsum is simply',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-        },
-        {
-            id: 2,
-            image: hero2,
-            title: 'Lorem Ipsuggm is simply',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-        },
-        {
-            id: 2,
-            image: hero2,
-            title: 'Lorem Ipsum is simply',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-        },
-        {
-            id: 2,
-            image: hero2,
-            title: 'Lorem Ipsum is simply',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-        },
-        {
-            id: 2,
-            image: hero2,
-            title: 'Lorem Ipsum is simply',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-        },
-        {
-            id: 2,
-            image: hero2,
-            title: 'Lorem Ipsum is simply',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-        },
-        {
-            id: 2,
-            image: hero2,
-            title: 'Lorem Ipsum is simply',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-        },
-        {
-            id: 2,
-            image: hero2,
-            title: 'Lorem Ipsum is simply',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-        },
-        {
-            id: 2,
-            image: hero2,
-            title: 'Lorem Ipsum is simply',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-        },
-    ];
+    // const eventContent = [
+    //     {
+    //         id: 1,
+    //         image: hero1,
+    //         title: 'Lorem Ipsum is simply',
+    //         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
+    //     },
+    //     {
+    //         id: 2,
+    //         image: hero2,
+    //         title: 'Lorem Ipsuggm is simply',
+    //         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
+    //     },
+    //     {
+    //         id: 2,
+    //         image: hero2,
+    //         title: 'Lorem Ipsum is simply',
+    //         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
+    //     },
+    //     {
+    //         id: 2,
+    //         image: hero2,
+    //         title: 'Lorem Ipsum is simply',
+    //         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
+    //     },
+    //     {
+    //         id: 2,
+    //         image: hero2,
+    //         title: 'Lorem Ipsum is simply',
+    //         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
+    //     },
+    //     {
+    //         id: 2,
+    //         image: hero2,
+    //         title: 'Lorem Ipsum is simply',
+    //         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
+    //     },
+    //     {
+    //         id: 2,
+    //         image: hero2,
+    //         title: 'Lorem Ipsum is simply',
+    //         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
+    //     },
+    //     {
+    //         id: 2,
+    //         image: hero2,
+    //         title: 'Lorem Ipsum is simply',
+    //         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
+    //     },
+    //     {
+    //         id: 2,
+    //         image: hero2,
+    //         title: 'Lorem Ipsum is simply',
+    //         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
+    //     },
+    // ];
 
     return (
         <>

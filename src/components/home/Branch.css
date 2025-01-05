@@ -3,7 +3,7 @@
 .branch {
   width: 100%;
   height: 600px;
-  background-color: red;
+  /* background-color: red; */
   margin-top: 80px;
   position: relative;
   overflow: hidden;

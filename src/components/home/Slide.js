@@ -56,8 +56,8 @@ export default function Slide(props) {
                                 <h1 className=' text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] text-3xl md:text-4xl lg:text-5xl tracking-wide capitalize font-bold text-center'>{content.h1}</h1>
                                 <p className=' text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] text-sm md:text-md lg:text-lg tracking-wide font-semibold text-center'>{content.p}</p>
                             </div>
-                            <div className=" w-full h-full">
-                                <img src={content.image} alt={`Slide ${index + 1}`} className=" h-full object-contain" />
+                            <div className=" w-full min-h-full object-cover object-center">
+                                <img src={content.image} alt={`Slide ${index + 1}`} className=" h-full w-full object-cover object-center" />
                             </div>
                         </div>
                     ))}
