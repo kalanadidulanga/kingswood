@@ -112,7 +112,7 @@ export default function Branch() {
         />
         <div className="container">
           <div className="branch-s1-c">
-            <img src={headerImage} alt={`${selectedBranch.name} campus`} />
+            <img src={'/img/5.jpeg'} alt={`${selectedBranch.name} campus`} />
             <p className="mt-6">
               {selectedBranch.description}
             </p>
@@ -126,13 +126,13 @@ export default function Branch() {
         </div>
       </section>
 
-      <section className="branch-s2">
+      {/* <section className="branch-s2">
         <div className="container">
           <div className="branch-s2-content">
             <Gallery images={images} />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <div className="branch-s3">
         <div className="container">
