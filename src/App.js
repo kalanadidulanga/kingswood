@@ -15,6 +15,7 @@ import EventsView from "./pages/EventView";
 import Facilities from "./pages/Facilities";
 import FacilitiesView from "./pages/FacilitiesView";
 import Admission from "./pages/Admission";
+import LaunchNow from "./pages/LaunchNow";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/facilities" element={<Facilities />} />
           {/* <Route path="/facilities-view/:id" element={<FacilitiesView />} /> */}
           <Route path="/event-view/:id" element={<EventsView />} />
+          <Route path="/launch" element={<LaunchNow />} />
         </Routes>
       </Router>
 
