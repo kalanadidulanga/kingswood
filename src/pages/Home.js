@@ -93,42 +93,42 @@ export default function Home() {
   const details = [
     {
       id: 1,
-      icon: <Users className="w-12 h-12" />,
+      icon: studentIcon,
       count: 33,
       title: 'First Batch Students',
       description: 'Started with 33 dedicated students across three classrooms when we opened our doors in January 2017.',
     },
     {
       id: 2,
-      icon: <Building2 className="w-12 h-12" />,
+      icon: awordsIcon,
       count: 4,
       title: 'Campus Locations',
       description: 'Growing network of campuses in Negombo, Anuradhapura, Chilaw and Anamaduwa.',
     },
     {
       id: 3,
-      icon: <GraduationCap className="w-12 h-12" />,
+      icon: teachersIcon,
       count: 3,
       title: 'Curriculum Options',
       description: 'Offering Local, Edexcel and Cambridge syllabi to cater to diverse educational needs.',
     },
     {
       id: 4,
-      icon: <School className="w-12 h-12" />,
+      icon: enrollmentsIcon,
       count: 2,
       title: 'Main Branches',
       description: 'Main college branches established in Bangadeniya (Chilaw) and Anamaduwa.',
     },
     {
       id: 5,
-      icon: <Trophy className="w-12 h-12" />,
+      icon: serviceIcon,
       count: 8,
       title: 'Years of Excellence',
       description: 'Providing quality education since 2017 under the leadership of Dr. B.A.K.R. Tharanga.',
     },
     {
       id: 6,
-      icon: <UserCheck className="w-12 h-12" />,
+      icon: schoolsIcon,
       count: 80,
       title: 'Attendance Target',
       description: 'We maintain high standards with a minimum 80% attendance requirement for all students.',
@@ -234,7 +234,7 @@ export default function Home() {
     {
       name: 'Dr. B.A.K.R. Tharanga',
       role: 'Director',
-      profileImage: "/api/placeholder/100/100",
+      profileImage: "/person.jpeg",
       rating: 5,
       description: 'Cambridge certified lecturer, Bachelor of Education Professional, and Honorary Doctor of Philosophy leading our institution since 2017.'
     },
