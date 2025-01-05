@@ -86,7 +86,7 @@ export default function Branch() {
       </div>
 
       <div className="container mx-auto py-4">
-        <div className="flex justify-center space-x-4 mb-8">
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
           {branches.map((branch) => (
             <button
               key={branch.id}

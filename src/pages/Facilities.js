@@ -56,7 +56,7 @@ export default function Events() {
                             <a href="/">Home</a>
                         </li>
                         <li>/</li>
-                        <li>Our Events</li>
+                        <li>Our Facilities</li>
                     </ul>
                 </div>
                 <div className='file-path-c2'>
