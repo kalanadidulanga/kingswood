@@ -39,6 +39,8 @@ import award3 from '../images/Awards/3.png';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { Building2, GraduationCap, School, Trophy, Users, UserCheck } from "lucide-react";
+
 
 export default function Home() {
 
@@ -46,18 +48,18 @@ export default function Home() {
   const slideContent = [
     {
       image: hero1,
-      h1: 'Education is the ',
-      p: 'Our school is a place where students are encouraged to say, “I see it, I get it, I can do it.”'
+      h1: 'Continuous Improvement',
+      p: 'Our mission is to make our students self-confident, enhance their thinking skills and make them into good human beings.'
     },
     {
       image: hero2,
-      h1: 'Education is the key to success in life.',
-      p: 'Our school is a place where students are encouraged to say, “I see it, I get it, I can do it.”'
+      h1: 'Quality Education',
+      p: 'We provide quality education to students from pre-primary to Advanced level with both local and international curricula.'
     },
     {
       image: hero3,
-      h1: 'Education is the key to asdasdasd',
-      p: 'Our school is a place where students are encouraged to say, “I see itsdfsdfsf.”'
+      h1: 'Global Role Model',
+      p: 'Our vision is to become a global role model for teaching and learning.'
     }
   ];
 
@@ -91,46 +93,46 @@ export default function Home() {
   const details = [
     {
       id: 1,
-      icon: studentIcon,
-      count: 437,
-      title: 'Current Students',
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium dolore atque ad fuga similique minima reiciendis, quasi illo voluptate sequi!',
+      icon: <Users className="w-12 h-12" />,
+      count: 33,
+      title: 'First Batch Students',
+      description: 'Started with 33 dedicated students across three classrooms when we opened our doors in January 2017.',
     },
     {
       id: 2,
-      icon: awordsIcon,
-      count: 250,
-      title: 'Awords',
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita nostrum delectus, temporibus suscipit magni omnis molestias!',
+      icon: <Building2 className="w-12 h-12" />,
+      count: 4,
+      title: 'Campus Locations',
+      description: 'Growing network of campuses in Negombo, Anuradhapura, Chilaw and Anamaduwa.',
     },
     {
       id: 3,
-      icon: teachersIcon,
-      count: 233,
-      title: 'Teachers',
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi velit maxime similique tempore sunt exercitationem explicabo modi.',
+      icon: <GraduationCap className="w-12 h-12" />,
+      count: 3,
+      title: 'Curriculum Options',
+      description: 'Offering Local, Edexcel and Cambridge syllabi to cater to diverse educational needs.',
     },
     {
       id: 4,
-      icon: enrollmentsIcon,
-      count: 2342,
-      title: 'Annual Enrollments',
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi velit maxime similique tempore sunt exercitationem explicabo modi.',
+      icon: <School className="w-12 h-12" />,
+      count: 2,
+      title: 'Main Branches',
+      description: 'Main college branches established in Bangadeniya (Chilaw) and Anamaduwa.',
     },
     {
       id: 5,
-      icon: serviceIcon,
-      count: 4,
-      title: 'years in service',
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi velit maxime similique tempore sunt exercitationem explicabo modi.',
+      icon: <Trophy className="w-12 h-12" />,
+      count: 8,
+      title: 'Years of Excellence',
+      description: 'Providing quality education since 2017 under the leadership of Dr. B.A.K.R. Tharanga.',
     },
     {
       id: 6,
-      icon: schoolsIcon,
-      count: 10,
-      title: 'Schools Island wide',
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi velit maxime similique tempore sunt exercitationem explicabo modi.',
-    },
+      icon: <UserCheck className="w-12 h-12" />,
+      count: 80,
+      title: 'Attendance Target',
+      description: 'We maintain high standards with a minimum 80% attendance requirement for all students.',
+    }
   ];
 
 
@@ -172,43 +174,40 @@ export default function Home() {
 
   const branchesList = [
     {
-      name: 'Chillaw',
-      image: branch1
+      name: 'Chilaw (Bangadeniya)',
+      image: "/api/placeholder/400/300"
+    },
+    {
+      name: 'Anamaduwa',
+      image: "/api/placeholder/400/300"
+    },
+    {
+      name: 'Negombo',
+      image: "/api/placeholder/400/300"
     },
     {
       name: 'Anuradhapura',
-      image: branch2
-    }
-    ,
-    {
-      name: 'Kandy',
-      image: branch3
+      image: "/api/placeholder/400/300"
     }
   ];
 
   const successItems = [
     {
-      title: 'Lorem Ipsum is simply',
-      description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, nulla! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, nulla! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, nulla!',
-      imgSrc: hero1,
+      title: 'Cambridge ESOL Partnership',
+      description: 'Official partnership with Cambridge Assessments for ESOL examinations conducted on school premises.',
+      imgSrc: "/api/placeholder/400/300",
       path: 'success'
     },
     {
-      title: 'Lorem Ipsum is simply',
-      description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, nulla!',
-      imgSrc: hero2,
+      title: 'University Affiliations',
+      description: 'Affiliated with Azteca University (UGC Recognized) and Open International University for Complementary Medicines.',
+      imgSrc: "/api/placeholder/400/300",
       path: 'success'
     },
     {
-      title: 'Lorem Ipsum is simply',
-      description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, nulla!',
-      imgSrc: hero3,
-      path: 'success'
-    },
-    {
-      title: 'Lorem Ipsum is simply',
-      description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, nulla!',
-      imgSrc: hero1,
+      title: 'Competency Based Education',
+      description: 'Implementation of modern competency-based education focusing on individual student mastery and progress.',
+      imgSrc: "/api/placeholder/400/300",
       path: 'success'
     }
   ];
@@ -233,18 +232,18 @@ export default function Home() {
 
   const reviewItems = [
     {
-      name: 'Tharindu Kulasinghe',
-      role: 'Father (Kingswood British Chillaw)',
-      profileImage: hero1,
-      rating: 4,
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae id, officiis molestias nemo voluptatum excepturi sed expedita ducimus sunt, quia ipsum dolorum itaque doloremque. Dolorem libero voluptate amet quo aliquam.'
+      name: 'Dr. B.A.K.R. Tharanga',
+      role: 'Director',
+      profileImage: "/api/placeholder/100/100",
+      rating: 5,
+      description: 'Cambridge certified lecturer, Bachelor of Education Professional, and Honorary Doctor of Philosophy leading our institution since 2017.'
     },
     {
-      name: 'Tharindu Kulasinghe',
-      role: 'Father (Kingswood British Chillaw)',
-      profileImage: hero1,
-      rating: 4,
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae id, officiis molestias nemo voluptatum excepturi sed expedita ducimus sunt, quia ipsum dolorum itaque doloremque. Dolorem libero voluptate amet quo aliquam.'
+      name: 'Mrs. M.S.W. Fernando',
+      role: 'Co-Founder and Group Principal',
+      profileImage: "/api/placeholder/100/100",
+      rating: 5,
+      description: 'Trained teacher from ITTA and Cambridge certified Lecturer, dedicated to maintaining high educational standards.'
     }
   ];
 
