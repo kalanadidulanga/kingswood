@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <Router>
-      <ScrollToTop />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -29,11 +29,11 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/admission" element={<Admission />} />
           <Route path="/facilities" element={<Facilities />} />
-          <Route path="/facilities-view/:id" element={<FacilitiesView />} />
+          {/* <Route path="/facilities-view/:id" element={<FacilitiesView />} /> */}
           <Route path="/event-view/:id" element={<EventsView />} />
         </Routes>
       </Router>
-      
+
     </>
   );
 }
