@@ -175,19 +175,19 @@ export default function Home() {
   const branchesList = [
     {
       name: 'Chilaw (Bangadeniya)',
-      image: "/api/placeholder/400/300"
+      image: "branch1"
     },
     {
       name: 'Anamaduwa',
-      image: "/api/placeholder/400/300"
+      image: "branch2"
     },
     {
       name: 'Negombo',
-      image: "/api/placeholder/400/300"
+      image: "branch1"
     },
     {
       name: 'Anuradhapura',
-      image: "/api/placeholder/400/300"
+      image: "branch3"
     }
   ];
 
@@ -234,14 +234,14 @@ export default function Home() {
     {
       name: 'Dr. B.A.K.R. Tharanga',
       role: 'Director',
-      profileImage: "/person.jpeg",
+      profileImage: "/person.jpg",
       rating: 5,
       description: 'Cambridge certified lecturer, Bachelor of Education Professional, and Honorary Doctor of Philosophy leading our institution since 2017.'
     },
     {
       name: 'Mrs. M.S.W. Fernando',
       role: 'Co-Founder and Group Principal',
-      profileImage: "/api/placeholder/100/100",
+      profileImage: "/person.jpg",
       rating: 5,
       description: 'Trained teacher from ITTA and Cambridge certified Lecturer, dedicated to maintaining high educational standards.'
     }
