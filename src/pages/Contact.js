@@ -37,7 +37,7 @@ export default function Contact() {
             <section className='contact-s1'>
                 <Title
                     title='Contact'
-                    description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, debitis.'
+                    description='Get in touch with us and we will get back to you as soon as possible.'
                     path='home'
                 ></Title>
                 <div className='container'>
@@ -138,7 +138,7 @@ export default function Contact() {
                         </div>
                         <div className='contact-s2-c2'>
                             <div className='contact-icon'>
-                            <i class="bi bi-geo-alt-fill"></i>
+                                <i class="bi bi-geo-alt-fill"></i>
                             </div>
                             <div className='contact-details'>
                                 <h3>Address</h3>
@@ -147,7 +147,7 @@ export default function Contact() {
                         </div>
                         <div className='contact-s2-c3'>
                             <div className='contact-icon'>
-                            <i class="bi bi-envelope-fill"></i>
+                                <i class="bi bi-envelope-fill"></i>
                             </div>
                             <div className='contact-details'>
                                 <h3>Email Address</h3>

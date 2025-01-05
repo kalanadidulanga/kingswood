@@ -59,7 +59,7 @@ export default function Events(props) {
             <section className='event'>
                 <Title
                     title='Events'
-                    description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, debitis.'
+                    description='Our Upcoming Events and Activities'
                     path='../events'
                 ></Title>
                 <div className='container'>

@@ -54,12 +54,13 @@ export default function UpcomingEventList(props) {
         ],
     };
 
-  return (
-    <>
-    <section className='event'>
+    return (
+        <>
+            <section className='event'>
                 <Title
                     title='Upcoming Events'
-                    description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, debitis.'
+                    //i want real description
+                    description='Our Upcoming Events'
                     path='../events'
                 ></Title>
                 <div className='container'>
@@ -86,6 +87,6 @@ export default function UpcomingEventList(props) {
                     </div>
                 </div>
             </section>
-    </>
-  )
+        </>
+    )
 }

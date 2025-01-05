@@ -39,8 +39,6 @@ import award3 from '../images/Awards/3.png';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { Building2, GraduationCap, School, Trophy, Users, UserCheck } from "lucide-react";
-
 
 export default function Home() {
 
@@ -195,19 +193,19 @@ export default function Home() {
     {
       title: 'Cambridge ESOL Partnership',
       description: 'Official partnership with Cambridge Assessments for ESOL examinations conducted on school premises.',
-      imgSrc: "/api/placeholder/400/300",
+      imgSrc: "/students.jpg",
       path: 'success'
     },
     {
       title: 'University Affiliations',
       description: 'Affiliated with Azteca University (UGC Recognized) and Open International University for Complementary Medicines.',
-      imgSrc: "/api/placeholder/400/300",
+      imgSrc: "/students.jpg",
       path: 'success'
     },
     {
       title: 'Competency Based Education',
       description: 'Implementation of modern competency-based education focusing on individual student mastery and progress.',
-      imgSrc: "/api/placeholder/400/300",
+      imgSrc: "/students.jpg",
       path: 'success'
     }
   ];
@@ -266,7 +264,7 @@ export default function Home() {
       <EventList eventItems={eventContent}></EventList>
       <Branch branches={branchesList}></Branch>
       <Success successItems={successItems}></Success>
-      <Awards awardItems={awardItems}></Awards>
+      {/* <Awards awardItems={awardItems}></Awards> */}
       <Review reviewItems={reviewItems}></Review>
       <Footer />
     </>
