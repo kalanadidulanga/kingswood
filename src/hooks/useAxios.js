@@ -6,12 +6,17 @@ function useAxios() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
+    // Set up an axios instance with the base URL
+    const axiosInstance = axios.create({
+        baseURL: process.env.REACT_APP_BASE_URL || "https://kingswood-british-collage.vercel.app",
+    });
+
     const fetch = async (options) => {
         setLoading(true);
         setError(null);
 
         try {
-            const response = await axios({
+            const response = await axiosInstance({
                 ...options,
             });
             setData(response.data);

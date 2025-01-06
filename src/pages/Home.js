@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Nav from '../components/commen/Nav';
 // import Title from '../components/commen/Title';
@@ -42,6 +42,10 @@ import { eventContent } from "../constants/data.js";
 
 
 export default function Home() {
+
+  useEffect(() => {
+    // window.scrollTo(0, 0);
+  }, []);
 
 
   const slideContent = [
