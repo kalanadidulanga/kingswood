@@ -49,10 +49,10 @@ export default function Home() {
 
   const getSliders = async () => {
     try {
-      const res = await fetch("/api/sliders");
-      if (res.data.success) {
-        console.log(res.data);
-      }
+      const res = await fetch("/api/events");
+
+      console.log(res.data);
+
 
     } catch (error) {
       toast.error("Something went wrong");
