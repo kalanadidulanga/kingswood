@@ -39,12 +39,29 @@ import award3 from '../images/Awards/3.png';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { eventContent } from "../constants/data.js";
+import useAxios from "../hooks/useAxios"; // Import the custom Axios hook
+import { toast } from "react-hot-toast";
 
 
 export default function Home() {
+  const { fetch, loading } = useAxios();
+
+
+  const getSliders = async () => {
+    try {
+      const res = await fetch("/api/sliders");
+      if (res.data.success) {
+        console.log(res.data);
+      }
+
+    } catch (error) {
+      toast.error("Something went wrong");
+      console.error(error);
+    }
+  }
 
   useEffect(() => {
-    // window.scrollTo(0, 0);
+    getSliders();
   }, []);
 
 
