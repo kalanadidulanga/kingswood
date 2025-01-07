@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { getImageUrl } from "../../utils/getImageUrl";
 
 export default function EventItem(props) {
   return (
@@ -9,7 +10,7 @@ export default function EventItem(props) {
           <div className="item-content">
             <div className="event-item">
               <div className="event-background">
-                <img src={event.image} alt={event.title} />
+                <img src={getImageUrl(event.images[0].url)} alt={event.title} />
               </div>
               <div className="event-details">
                 <h1>{event.title}</h1>

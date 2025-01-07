@@ -20,9 +20,58 @@ import Header4 from '../images/hero/image1.jpg'
 import hero1 from "../images/hero/image1.jpg";
 import hero2 from "../images/hero/image2.jpg";
 import hero3 from "../images/hero/image3.jpg";
+import { useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
+import useAxios from '../hooks/useAxios.js'
+import { useParams } from 'react-router-dom'
 
 
 export default function FacilitiesView() {
+    const { id } = useParams();
+    const [facilitiesContent, setFacilitiesContent] = useState({});
+    const [facilities, setFacilities] = useState([]);
+    const { fetch, loading } = useAxios();
+
+
+    const getFacilitieById = async () => {
+        try {
+
+            const { data: response } = await fetch({
+                method: "GET",
+                url: "/api/facilities/" + id,
+            });
+            if (response.success) {
+                // console.log(response.data.facility);
+                setFacilitiesContent(response.data.facility);
+            }
+
+        } catch (error) {
+            toast.error("Something went wrong");
+            console.error(error);
+        }
+    }
+
+    const getFacilities = async () => {
+        try {
+            const response = await fetch({
+                method: "GET",
+                url: "/api/facilities",
+            });
+            if (response.data.success) {
+                // console.log(response.data.facilities);
+                setFacilities(response.data.data.facilities);
+            }
+
+        } catch (error) {
+            toast.error("Something went wrong");
+            console.error(error);
+        }
+    }
+
+    useEffect(() => {
+        getFacilitieById();
+        getFacilities();
+    }, [id]);
 
     const FacilitiesContent = [
         {
@@ -62,18 +111,14 @@ export default function FacilitiesView() {
     return (
         <>
             <Nav></Nav>
-            <SubHeader title="Library Facilities" image={Header} ></SubHeader>
-            <FilePath text="Library Facilities" path="LibraryFacilities"></FilePath>
+            <SubHeader title={facilitiesContent.title} image={Header} ></SubHeader>
+            <FilePath text={facilitiesContent.title} path={facilitiesContent.title}></FilePath>
 
             <section className='event-view-1'>
                 <div className='container'>
                     <div className='event-view-content'>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                            <br /><br />
-                            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            <br /><br />
-                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            {facilitiesContent.description}
                         </p>
 
                     </div>
@@ -84,7 +129,7 @@ export default function FacilitiesView() {
                 <div className='container'>
                     <div className='event-view-2-content'>
 
-                        <Gallery images={images}></Gallery>
+                        <Gallery images={facilitiesContent.images}></Gallery>
                     </div>
                 </div>
             </section>
@@ -92,7 +137,7 @@ export default function FacilitiesView() {
 
             <div className='event-view-3'>
                 <div className='container'>
-                    <FacilitiesList facilitiesData={FacilitiesContent}></FacilitiesList>
+                    <FacilitiesList facilitiesData={facilities}></FacilitiesList>
                 </div>
             </div>
             <Footer></Footer>

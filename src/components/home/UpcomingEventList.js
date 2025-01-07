@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import './EventList.css'
+import { getImageUrl } from '../../utils/getImageUrl';
 
 export default function UpcomingEventList(props) {
 
@@ -72,7 +73,7 @@ export default function UpcomingEventList(props) {
                                         <div className='item-content'>
                                             <div className='event-item'>
                                                 <div className='event-background'>
-                                                    <img src={item.image} alt='' />
+                                                    <img src={getImageUrl(item.images[0].url)} alt={item.title} />
                                                 </div>
                                                 <div className='event-details'>
                                                     <h1>{item.title}</h1>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 
@@ -18,7 +18,33 @@ import hero2 from "../images/hero/image2.jpg";
 
 import './Events.css'
 import { eventContent } from '../constants/data'
+import useAxios from '../hooks/useAxios'
+import toast from 'react-hot-toast'
 export default function Events() {
+    const { fetch, loading } = useAxios();
+
+    const [events, setEvents] = useState([]);
+
+    const fetchEvents = async () => {
+        try {
+            const { data: response } = await fetch({
+                url: "/api/events?eventType=upcoming",
+                method: "GET",
+            });
+
+            if (response.success) {
+                console.log(response.data.events);
+                setEvents(response.data.events);
+            }
+        } catch (err) {
+            console.error("Error fetching events:", err);
+            toast.error("An error occurred while fetching events.");
+        }
+    };
+
+    useEffect(() => {
+        fetchEvents();
+    }, []);
 
     // const eventContent = [
     //     {
@@ -111,13 +137,8 @@ export default function Events() {
             <section className='events-s1'>
                 <div className='container'>
                     <div className="event-list">
-                        <EventItem events={eventContent}></EventItem>
+                        <EventItem events={events}></EventItem>
                     </div>
-                </div>
-            </section>
-            <section className='events-s2'>
-                <div className='container'>
-                    <div className='events-pages'></div>
                 </div>
             </section>
             <Footer></Footer>

@@ -52,6 +52,7 @@ export default function Home() {
   const [schoolInfo, setSchoolInfo] = useState([]);
   const [branchesList, setBranches] = useState([]);
   const [reviews, setReviews] = useState([]);
+  const [upcomingEvents, setUpcomingEvents] = useState([]);
 
   const getSliders = async () => {
     try {
@@ -148,12 +149,30 @@ export default function Home() {
     }
   };
 
+  const fetchEvents = async () => {
+    try {
+      const { data: response } = await fetch({
+        url: "/api/events?eventType=upcoming",
+        method: "GET",
+      });
+
+      if (response.success) {
+        console.log(response.data.events);
+        setUpcomingEvents(response.data.events);
+      }
+    } catch (err) {
+      console.error("Error fetching events:", err);
+      toast.error("An error occurred while fetching events.");
+    }
+  };
+
   useEffect(() => {
     getSliders();
     getFacilities();
     getSchoolInfo();
     fetchBranches();
     fetchReviews();
+    fetchEvents();
   }, []);
 
 
@@ -264,26 +283,6 @@ export default function Home() {
   //   },
   // ];
 
-  const UpcomingEventContent = [
-    {
-      id: 1,
-      image: hero1,
-      title: 'Lorem Ipsum is simply',
-      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-    },
-    {
-      id: 2,
-      image: hero2,
-      title: 'Lorem Ipsum is simply',
-      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-    },
-    {
-      id: 3,
-      image: hero2,
-      title: 'Lorem Ipsum is simply',
-      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sunt delectus cum molestiae. Deleniti dicta sit pariatur fugit asperiores praesentium!',
-    },
-  ];
 
   // const branchesList = [
   //   {
@@ -367,7 +366,9 @@ export default function Home() {
       <Slide content={slideContent} />
       <FacilitiesList facilitiesData={FacilitiesContent} />
       <DetailsList details={schoolInfo} />
-
+      <UpcomingEventList
+        eventItems={upcomingEvents}
+      />
       {/* {UpcomingEventContent.length >= 3 ? (
         <UpcomingEventList
           eventItems={UpcomingEventContent}
@@ -376,7 +377,7 @@ export default function Home() {
         ""
       )} */}
 
-      <EventList eventItems={eventContent}></EventList>
+      {/* <EventList eventItems={eventContent}></EventList> */}
       <Branch branches={branchesList}></Branch>
       <Success successItems={successItems}></Success>
       {/* <Awards awardItems={awardItems}></Awards> */}

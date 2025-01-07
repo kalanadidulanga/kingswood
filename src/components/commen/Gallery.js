@@ -1,6 +1,7 @@
 import React from "react";
 import Masonry from "react-masonry-css";
 import './Gallery.css'
+import { getImageUrl } from "../../utils/getImageUrl";
 
 export default function Gallery(props) {
   return (
@@ -15,9 +16,9 @@ export default function Gallery(props) {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        {props.images.map((src, index) => (
+        {props.images?.map((img, index) => (
           <div key={index} className="image-container">
-            <img src={src} alt={`Image ${index + 1}`} />
+            <img src={getImageUrl(img.url)} alt={`Image ${index + 1}`} />
           </div>
         ))}
       </Masonry>
