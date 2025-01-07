@@ -1,8 +1,11 @@
 import React from 'react'
 import { useSocial } from '../../libs/useSocialStore';
+import { useContact } from '../../libs/useContactStore';
 
 export default function Header() {
-    const { socialLinks, setSocialLinks } = useSocial();
+    const { socialLinks } = useSocial();
+    const { contactDetails } = useContact();
+
 
     return (
         <>
@@ -13,15 +16,15 @@ export default function Header() {
                             <ul>
                                 <li>
                                     <i class="ri-map-pin-line"></i>
-                                    <p>489, Pallama Road , Bangadeniya</p>
+                                    <p>{contactDetails.address}</p>
                                 </li>
                                 <li>
                                     <i class="bi bi-telephone"></i>
-                                    <p>0773838366</p>
+                                    <p>{contactDetails.contactNumber}</p>
                                 </li>
                                 <li>
                                     <i class="bi bi-envelope"></i>
-                                    <p>info@kingswoodbritish.com</p>
+                                    <p>{contactDetails.emailAddress}</p>
                                 </li>
                             </ul>
                         </div>

@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 
 import './Footer.css'
+import { useContact } from "../../libs/useContactStore";
+import { useSocial } from "../../libs/useSocialStore";
 
 export default function Footer() {
+    const { socialLinks } = useSocial();
+    const { contactDetails } = useContact();
+
     return (
         <>
             <footer className="">
@@ -48,27 +53,27 @@ export default function Footer() {
                                 <h1 className="footer-title">Contact Us</h1>
                                 <div className="footer-contact-content">
                                     <i className="ri-map-pin-line"></i>
-                                    <h4>489, Pallama Road, Bangadeniya, Chilaw</h4>
+                                    <h4>{contactDetails.address}</h4>
                                 </div>
                                 <div className="footer-contact-content">
                                     <i className="ri-phone-fill"></i>
-                                    <h4>+94 77 383 8366</h4>
+                                    <h4>{contactDetails.contactNumber}</h4>
                                 </div>
                                 <div className="footer-contact-content">
                                     <i className="ri-mail-line"></i>
-                                    <h4>info@kingswoodbritish.com</h4>
+                                    <h4>{contactDetails.emailAddress}</h4>
                                 </div>
                                 <div className="footer-soical-media">
-                                    <a href="https://www.facebook.com/kingswood" target="_blank" rel="noopener noreferrer" >
+                                    <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" >
                                         <i className="ri-facebook-fill "></i>
                                     </a>
-                                    <a href="https://www.instagram.com/kingswood" target="_blank" rel="noopener noreferrer">
+                                    <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer">
                                         <i className="ri-instagram-fill"></i>
                                     </a>
-                                    <a href="https://www.youtube.com/kingswood" target="_blank" rel="noopener noreferrer">
+                                    <a href={socialLinks.youtube} target="_blank" rel="noopener noreferrer">
                                         <i className="ri-youtube-fill"></i>
                                     </a>
-                                    <a href="https://www.linkedin.com/company/kingswood" target="_blank" rel="noopener noreferrer">
+                                    <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer">
                                         <i className="ri-linkedin-fill"></i>
                                     </a>
                                 </div>

@@ -8,6 +8,7 @@ import "./Menu.css";
 import useAxios from "../../hooks/useAxios";
 import toast from "react-hot-toast";
 import { useSocial } from "../../libs/useSocialStore";
+import { useContact } from "../../libs/useContactStore";
 
 export default function Nav() {
   const { fetch, loading } = useAxios();
@@ -15,6 +16,7 @@ export default function Nav() {
   const [background, setBackground] = useState("");
 
   const { socialLinks, setSocialLinks } = useSocial();
+  const { contactDetails, setContactDetails } = useContact();
 
   const menuClick = () => {
     console.log("hello");
@@ -34,7 +36,7 @@ export default function Nav() {
         method: "GET",
       });
       if (data.success) {
-        console.log(data.data);
+        // console.log(data.data);
         setSocialLinks(data.data);
       }
     } catch (error) {
@@ -50,7 +52,8 @@ export default function Nav() {
         method: "GET",
       });
       if (data.success) {
-        console.log(data.data);
+        // console.log(data.data);
+        setContactDetails(data.data);
       }
     } catch (error) {
       console.error("Error fetching data:", error);
