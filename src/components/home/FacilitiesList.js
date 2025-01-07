@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Title from '../commen/Title';
+import { getImageUrl } from '../../utils/getImageUrl';
 
 export default function FacilitiesList(props) {
 
@@ -72,14 +73,14 @@ export default function FacilitiesList(props) {
                                 {props.facilitiesData.map((facility, index) => (
                                     <div className='item' key={index}>
                                         <div className='item-content'>
-                                            {/* <Link to={`../facilities-view/${facility.id}`} className='facilities-item'> */}
-                                            <Link to={`#`} className='facilities-item'>
+                                            <Link to={`../facilities-view/${facility.id}`} className='facilities-item'>
+                                                {/* <Link to={`#`} className='facilities-item'> */}
                                                 <div className='facilities-item-bg'>
-                                                    <img src={facility.image} alt={facility.title} />
+                                                    <img src={getImageUrl(facility.images[0].url)} alt={facility.title} />
                                                 </div>
                                                 <div className='facilities-item-c'>
-                                                    <h1>{facility.title}</h1>
-                                                    <p>{facility.description}</p>
+                                                    <h1>{facility.title || 'Facility'}</h1>
+                                                    <p>{facility.description || 'Description'}</p>
                                                 </div>
                                             </Link>
                                         </div>

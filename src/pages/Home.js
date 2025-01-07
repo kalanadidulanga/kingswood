@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import Nav from '../components/commen/Nav';
 // import Title from '../components/commen/Title';
@@ -41,18 +41,28 @@ import "slick-carousel/slick/slick-theme.css";
 import { eventContent } from "../constants/data.js";
 import useAxios from "../hooks/useAxios"; // Import the custom Axios hook
 import { toast } from "react-hot-toast";
+import { icon } from "leaflet";
 
 
 export default function Home() {
   const { fetch, loading } = useAxios();
 
+  const [slideContent, setSlideContent] = useState([]);
+  const [FacilitiesContent, setFacilitiesContent] = useState([]);
+  const [schoolInfo, setSchoolInfo] = useState([]);
+  const [branchesList, setBranches] = useState([]);
 
   const getSliders = async () => {
     try {
-      const res = await fetch("/api/events");
+      const response = await fetch({
+        method: "GET",
+        url: "/api/sliders",
+      });
+      // console.log(response.data);
 
-      console.log(res.data);
-
+      if (response.data.success) {
+        setSlideContent(response.data.data);
+      }
 
     } catch (error) {
       toast.error("Something went wrong");
@@ -60,100 +70,162 @@ export default function Home() {
     }
   }
 
+  const getFacilities = async () => {
+    try {
+      const response = await fetch({
+        method: "GET",
+        url: "/api/facilities",
+      });
+      if (response.data.success) {
+        // console.log(response.data.facilities);
+        setFacilitiesContent(response.data.data.facilities);
+      }
+
+    } catch (error) {
+      toast.error("Something went wrong");
+      console.error(error);
+    }
+  }
+
+  const getSchoolInfo = async () => {
+    try {
+      const { data } = await fetch({
+        url: "/api/school-info",
+        method: "GET",
+      });
+      if (data.success) {
+        // console.log(data.data);
+        setSchoolInfo(data.data.map((item) => {
+          return {
+            ...item,
+            icon: item.title === "Students" ? studentIcon : item.title === "Teachers" ? teachersIcon : item.title === "Year in Service" ? serviceIcon : item.title === "School Island Wide" ? schoolsIcon : item.title === "Annual Enrollments" ? enrollmentsIcon : awordsIcon,
+          };
+        }));
+      } else {
+        throw new Error(data.message || "Failed to fetch school info");
+      }
+    } catch (error) {
+      console.error("Error fetching school info:", error);
+      toast.error("Failed to fetch school info. Please try again.");
+    }
+  }
+
+  const fetchBranches = async () => {
+    try {
+      const { data: response } = await fetch({
+        url: "/api/branches",
+        method: "GET",
+      });
+
+      if (response.success) {
+        console.log(response.data.branches);
+        setBranches(response.data.branches);
+      } else {
+        toast.error(response.data?.message || "Failed to fetch branches");
+      }
+    } catch (err) {
+      console.error("Error fetching branches:", err);
+      toast.error("An error occurred while fetching branches.");
+    }
+  };
+
   useEffect(() => {
     getSliders();
+    getFacilities();
+    getSchoolInfo();
+    fetchBranches();
   }, []);
 
 
-  const slideContent = [
-    {
-      image: '/img/gg/8.jpg',
-      h1: 'Continuous Improvement',
-      p: 'Our mission is to make our students self-confident, enhance their thinking skills and make them into good human beings.'
-    },
-    {
-      image: '/img/gg/2.jpg',
-      h1: 'Quality Education',
-      p: 'We provide quality education to students from pre-primary to Advanced level with both local and international curricula.'
-    },
-    {
-      image: '/img/gg/3.jpg',
-      h1: 'Global Role Model',
-      p: 'Our vision is to become a global role model for teaching and learning.'
-    }
-  ];
+  // const slideContent = [
+  //   {
+  //     image: '/img/gg/8.jpg',
+  //     h1: 'Continuous Improvement',
+  //     p: 'Our mission is to make our students self-confident, enhance their thinking skills and make them into good human beings.'
+  //   },
+  //   {
+  //     image: '/img/gg/2.jpg',
+  //     h1: 'Quality Education',
+  //     p: 'We provide quality education to students from pre-primary to Advanced level with both local and international curricula.'
+  //   },
+  //   {
+  //     image: '/img/gg/3.jpg',
+  //     h1: 'Global Role Model',
+  //     p: 'Our vision is to become a global role model for teaching and learning.'
+  //   }
+  // ];
 
-  const FacilitiesContent = [
-    {
-      id: 1,
-      title: 'Pre-Primary Education',
-      description: 'Nurturing young minds with Oxford Print syllabus and local competency activities',
-      image: '/img/11.jpg'
-    },
-    {
-      id: 2,
-      title: 'Primary Education',
-      description: 'Comprehensive primary education following Edexcel curriculum',
-      image: '/img/22.jpeg'
-    },
-    {
-      id: 3,
-      title: 'Secondary Education',
-      description: 'Advanced secondary education with both local and international syllabi',
-      image: '/img/33.jpg'
-    },
-    {
-      id: 4,
-      title: 'Cambridge ESOL',
-      description: 'Official Cambridge Assessment ESOL examination center',
-      image: '/img/44.jpeg'
-    },
-  ];
+  // const FacilitiesContent = [
+  //   {
+  //     id: 1,
+  //     title: 'Pre-Primary Education',
+  //     description: 'Nurturing young minds with Oxford Print syllabus and local competency activities',
+  //     image: '/img/11.jpg'
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'Primary Education',
+  //     description: 'Comprehensive primary education following Edexcel curriculum',
+  //     image: '/img/22.jpeg'
+  //   },
+  //   {
+  //     id: 3,
+  //     title: 'Secondary Education',
+  //     description: 'Advanced secondary education with both local and international syllabi',
+  //     image: '/img/33.jpg'
+  //   },
+  //   {
+  //     id: 4,
+  //     title: 'Cambridge ESOL',
+  //     description: 'Official Cambridge Assessment ESOL examination center',
+  //     image: '/img/44.jpeg'
+  //   },
+  // ];
 
-  const details = [
-    {
-      id: 1,
-      icon: studentIcon,
-      count: 33,
-      title: 'First Batch Students',
-      description: 'Started with 33 dedicated students across three classrooms when we opened our doors in January 2017.',
-    },
-    {
-      id: 2,
-      icon: awordsIcon,
-      count: 4,
-      title: 'Campus Locations',
-      description: 'Growing network of campuses in Negombo, Anuradhapura, Chilaw and Anamaduwa.',
-    },
-    {
-      id: 3,
-      icon: teachersIcon,
-      count: 3,
-      title: 'Curriculum Options',
-      description: 'Offering Local, Edexcel and Cambridge syllabi to cater to diverse educational needs.',
-    },
-    {
-      id: 4,
-      icon: enrollmentsIcon,
-      count: 2,
-      title: 'Main Branches',
-      description: 'Main college branches established in Bangadeniya (Chilaw) and Anamaduwa.',
-    },
-    {
-      id: 5,
-      icon: serviceIcon,
-      count: 8,
-      title: 'Years of Excellence',
-      description: 'Providing quality education since 2017 under the leadership of Dr. B.A.K.R. Tharanga.',
-    },
-    {
-      id: 6,
-      icon: schoolsIcon,
-      count: 80,
-      title: 'Attendance Target',
-      description: 'We maintain high standards with a minimum 80% attendance requirement for all students.',
-    }
-  ];
+  // const details = [
+  //   {
+  //     id: 1,
+  //     icon: studentIcon,
+  //     count: 33,
+  //     title: 'First Batch Students',
+  //     description: 'Started with 33 dedicated students across three classrooms when we opened our doors in January 2017.',
+  //   },
+  //   {
+  //     id: 2,
+  //     icon: awordsIcon,
+  //     count: 4,
+  //     title: 'Campus Locations',
+  //     description: 'Growing network of campuses in Negombo, Anuradhapura, Chilaw and Anamaduwa.',
+  //   },
+  //   {
+  //     id: 3,
+  //     icon: teachersIcon,
+  //     count: 3,
+  //     title: 'Curriculum Options',
+  //     description: 'Offering Local, Edexcel and Cambridge syllabi to cater to diverse educational needs.',
+  //   },
+  //   {
+  //     id: 4,
+  //     icon: enrollmentsIcon,
+  //     count: 2,
+  //     title: 'Main Branches',
+  //     description: 'Main college branches established in Bangadeniya (Chilaw) and Anamaduwa.',
+  //   },
+  //   {
+  //     id: 5,
+  //     icon: serviceIcon,
+  //     count: 8,
+  //     title: 'Years of Excellence',
+  //     description: 'Providing quality education since 2017 under the leadership of Dr. B.A.K.R. Tharanga.',
+  //   },
+  //   {
+  //     id: 6,
+  //     icon: schoolsIcon,
+  //     count: 80,
+  //     title: 'Attendance Target',
+  //     description: 'We maintain high standards with a minimum 80% attendance requirement for all students.',
+  //   }
+  // ];
 
 
   // const eventContent = [
@@ -193,24 +265,24 @@ export default function Home() {
     },
   ];
 
-  const branchesList = [
-    {
-      name: 'Chilaw (Bangadeniya)',
-      image: '/img/gg/6.jpg'
-    },
-    {
-      name: 'Anamaduwa',
-      image: '/img/gg/4.jpg'
-    },
-    {
-      name: 'Negombo',
-      image: '/img/gg/5.jpg'
-    },
-    {
-      name: 'Anuradhapura',
-      image: '/img/gg/7.jpg'
-    }
-  ];
+  // const branchesList = [
+  //   {
+  //     name: 'Chilaw (Bangadeniya)',
+  //     image: '/img/gg/6.jpg'
+  //   },
+  //   {
+  //     name: 'Anamaduwa',
+  //     image: '/img/gg/4.jpg'
+  //   },
+  //   {
+  //     name: 'Negombo',
+  //     image: '/img/gg/5.jpg'
+  //   },
+  //   {
+  //     name: 'Anuradhapura',
+  //     image: '/img/gg/7.jpg'
+  //   }
+  // ];
 
   const successItems = [
     {
@@ -274,7 +346,7 @@ export default function Home() {
       <Nav />
       <Slide content={slideContent} />
       <FacilitiesList facilitiesData={FacilitiesContent} />
-      <DetailsList details={details} />
+      <DetailsList details={schoolInfo} />
 
       {/* {UpcomingEventContent.length >= 3 ? (
         <UpcomingEventList

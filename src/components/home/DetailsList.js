@@ -15,7 +15,7 @@ export default function DetailsList(props) {
                                             <img src={detail.icon} alt='' />
                                         </div>
                                         <div className='detail-item-title'>
-                                            <h1>{detail.count}<span>+</span></h1>
+                                            <h1>{detail.number}<span>+</span></h1>
                                             <h4>{detail.title}</h4>
                                         </div>
                                     </div>
