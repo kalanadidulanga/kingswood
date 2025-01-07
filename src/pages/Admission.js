@@ -89,7 +89,7 @@ export default function Admission() {
             <Nav />
             <SubHeader title="Admissions" image={Header} />
             <FilePath text="Admissions" path="admissions" />
-            <div className="max-w-4xl mx-auto px-4 py-8">
+            <div className="max-w-4xl mx-auto px-4 pt-8">
                 <h1 className="text-3xl font-bold mb-6">Dear Parents/Guardians,</h1>
                 <p className="mb-6">
                     Welcome to Kingswood British College. Since our establishment in January 2017, we have
@@ -97,7 +97,7 @@ export default function Admission() {
                     college maintains affordable charges for all categories while delivering excellence in
                     education.
                 </p>
-                <h2 className="text-xl font-semibold mb-4">Admission Requirements:</h2>
+                {/* <h2 className="text-xl font-semibold mb-4">Admission Requirements:</h2> */}
                 {/* Admission Requirements and Fee Structure */}
             </div>
             <div className="admission-application">

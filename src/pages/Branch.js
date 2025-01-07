@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Branch.css";
 
 import Nav from "../components/commen/Nav";
@@ -19,81 +19,171 @@ import hero2 from "../images/hero/image2.jpg";
 import hero3 from "../images/hero/image3.jpg";
 
 import headerImage from "../images/theme/background.jpg";
+import toast from "react-hot-toast";
+import useAxios from "../hooks/useAxios.js";
+import { getImageUrl } from "../utils/getImageUrl.js";
+import { Loader2 } from "lucide-react";
 
-const branches = [
-  {
-    id: 1,
-    name: "Bangadeniya",
-    description: "Our first branch established in 2017, located a few kilometers away from Chilaw. The branch started with just 33 students and 5 teachers, hosting two pre-primary classes and 1 grade one class. Today, it stands as our main campus providing comprehensive education from pre-primary to Advanced level.",
-    type: "Main Campus",
-    image: '/img/gg/6.jpg'
-  },
-  {
-    id: 2,
-    name: "Anamaduwa",
-    description: "One of our key branches providing quality education from pre-primary to Advanced level, following both local and international curricula including Edexcel and Cambridge syllabi.",
-    type: "Branch Campus",
-    image: '/img/gg/4.jpg'
+// const branches = [
+//   {
+//     id: 1,
+//     name: "Bangadeniya",
+//     description: "Our first branch established in 2017, located a few kilometers away from Chilaw. The branch started with just 33 students and 5 teachers, hosting two pre-primary classes and 1 grade one class. Today, it stands as our main campus providing comprehensive education from pre-primary to Advanced level.",
+//     type: "Main Campus",
+//     image: '/img/gg/6.jpg'
+//   },
+//   {
+//     id: 2,
+//     name: "Anamaduwa",
+//     description: "One of our key branches providing quality education from pre-primary to Advanced level, following both local and international curricula including Edexcel and Cambridge syllabi.",
+//     type: "Branch Campus",
+//     image: '/img/gg/4.jpg'
 
-  },
-  {
-    id: 3,
-    name: "Negombo",
-    description: "Campus branch affiliated with University of Azteca, North America, offering higher education opportunities alongside our regular college programs.",
-    type: "Campus Branch",
-    image: '/img/gg/5.jpg'
+//   },
+//   {
+//     id: 3,
+//     name: "Negombo",
+//     description: "Campus branch affiliated with University of Azteca, North America, offering higher education opportunities alongside our regular college programs.",
+//     type: "Campus Branch",
+//     image: '/img/gg/5.jpg'
 
-  },
-  {
-    id: 4,
-    name: "Anuradhapura",
-    description: "Campus branch offering both college and university programs in affiliation with University of Azteca, providing advanced education opportunities to students in the region.",
-    type: "Campus Branch",
-    image: '/img/gg/7.jpg'
-  }
-];
+//   },
+//   {
+//     id: 4,
+//     name: "Anuradhapura",
+//     description: "Campus branch offering both college and university programs in affiliation with University of Azteca, providing advanced education opportunities to students in the region.",
+//     type: "Campus Branch",
+//     image: '/img/gg/7.jpg'
+//   }
+// ];
 
-const FacilitiesContent = [
-  {
-    id: 1,
-    title: 'Pre-Primary Education',
-    description: 'Nurturing young minds with Oxford Print syllabus and local competency activities',
-    image: '/img/11.jpg'
-  },
-  {
-    id: 2,
-    title: 'Primary Education',
-    description: 'Comprehensive primary education following Edexcel curriculum',
-    image: '/img/22.jpeg'
-  },
-  {
-    id: 3,
-    title: 'Secondary Education',
-    description: 'Advanced secondary education with both local and international syllabi',
-    image: '/img/33.jpg'
-  },
-  {
-    id: 4,
-    title: 'Cambridge ESOL',
-    description: 'Official Cambridge Assessment ESOL examination center',
-    image: '/img/44.jpeg'
-  },
-];
+// const FacilitiesContent = [
+//   {
+//     id: 1,
+//     title: 'Pre-Primary Education',
+//     description: 'Nurturing young minds with Oxford Print syllabus and local competency activities',
+//     image: '/img/11.jpg'
+//   },
+//   {
+//     id: 2,
+//     title: 'Primary Education',
+//     description: 'Comprehensive primary education following Edexcel curriculum',
+//     image: '/img/22.jpeg'
+//   },
+//   {
+//     id: 3,
+//     title: 'Secondary Education',
+//     description: 'Advanced secondary education with both local and international syllabi',
+//     image: '/img/33.jpg'
+//   },
+//   {
+//     id: 4,
+//     title: 'Cambridge ESOL',
+//     description: 'Official Cambridge Assessment ESOL examination center',
+//     image: '/img/44.jpeg'
+//   },
+// ];
 
 export default function Branch() {
-  const [selectedBranch, setSelectedBranch] = useState(branches[0]);
-  const images = [Header, Header2, Header3, Header4, Header];
+  const { fetch } = useAxios();
+  const [loading, setLoading] = useState(false);
+  const [branches, setBranches] = useState([]);
+  const [selectedBranch, setSelectedBranch] = useState({});
+  const [facilitiesContent, setFacilitiesContent] = useState([]);
+  const [branch, setBranch] = useState({});
+  // const images = [Header, Header2, Header3, Header4, Header];
+
+  const getBranches = async () => {
+    try {
+      setLoading(true);
+      const { data } = await fetch({
+        url: "/api/branches",
+        method: "GET",
+      });
+      if (data.success) {
+        // console.log(data.data.branches);
+        setSelectedBranch(data.data.branches[0]);
+        setBranches(data.data.branches);
+      } else {
+        throw new Error(data.message || "Failed to fetch school info");
+      }
+    } catch (error) {
+      console.error("Error fetching school info:", error);
+      toast.error("Failed to fetch school info. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  const getFacilities = async () => {
+    try {
+      const response = await fetch({
+        method: "GET",
+        url: "/api/facilities",
+      });
+      if (response.data.success) {
+        // console.log(response.data.facilities);
+        setFacilitiesContent(response.data.data.facilities);
+      }
+
+    } catch (error) {
+      toast.error("Something went wrong");
+      console.error(error);
+    }
+  }
+
+  const getBranchById = async (id) => {
+    try {
+      const { data } = await fetch({
+        url: "/api/branches/" + id,
+        method: "GET",
+      });
+      if (data.success) {
+        console.log(data.data);
+        setBranch(data.data);
+      } else {
+        throw new Error(data.message || "Failed to fetch school info");
+      }
+    } catch (error) {
+      console.error("Error fetching school info:", error);
+      toast.error("Failed to fetch school info. Please try again.");
+    }
+  }
+
+  useEffect(() => {
+    getBranches();
+    getFacilities();
+  }, []);
+
+  useEffect(() => {
+    if (selectedBranch.id) {
+      getBranchById(selectedBranch.id);
+    }
+  }, [selectedBranch]);
+
+  if (loading) {
+    return (
+      <>
+        <Nav />
+        <div className=" flex justify-center items-center w-full pt-16">
+          <Loader2 className="animate-spin mr-3" />
+          <p>Loading...</p>
+        </div>
+        <Footer />
+      </>
+    )
+  }
 
   return (
     <>
       <Nav />
       <div className="branch-header">
-        <SubHeader title={selectedBranch.name} image={headerImage} />
+        <SubHeader title={selectedBranch.title} image={headerImage} />
       </div>
 
       <div className="container mx-auto py-4">
         <div className="flex flex-wrap justify-center gap-4 mb-8">
-          {branches.map((branch) => (
+          {branches?.map((branch) => (
             <button
               key={branch.id}
               onClick={() => setSelectedBranch(branch)}
@@ -102,47 +192,42 @@ export default function Branch() {
                 : "bg-gray-200 hover:bg-gray-300"
                 }`}
             >
-              {branch.name}
+              {branch.title}
             </button>
           ))}
         </div>
       </div>
 
-      <FilePath text={selectedBranch.name} path={selectedBranch.name.toLowerCase()} />
+      <FilePath text={selectedBranch.title} path={selectedBranch.title} />
 
       <section className="branch-s1">
         <Title
-          title={`About Kingswood British College - ${selectedBranch.name}`}
+          title={`About Kingswood British College - ${selectedBranch.title}`}
           description="A Leading English Medium College Since 2017"
           path="branch"
         />
         <div className="container">
           <div className="branch-s1-c">
-            <img src={selectedBranch.image} alt={`${selectedBranch.name} campus`} />
+            <img src={getImageUrl(selectedBranch.imageUrl)} alt={`${selectedBranch.title} campus`} />
             <p className="mt-6">
               {selectedBranch.description}
-            </p>
-            <p className="mt-4">
-              Kingswood British College was founded by Dr. B.A.K.R. Tharanga on 5th January 2017. It has been a leading English Medium College that operates with a focus on providing quality education up to Advanced Level. The college is registered with the Human Resource Development Authority in North Western Province and is affiliated with Azteca University (UGC Recognized) and the Open International University for Complementary Medicines.
-            </p>
-            <p className="mt-4">
-              We maintain affordable charges with admission fees ranging from LKR 50,000 for Pre-Primary to LKR 75,000 for Secondary levels. Our institution follows multiple curricula including local, Edexcel, and Cambridge syllabi to provide comprehensive education to our students.
             </p>
           </div>
         </div>
       </section>
 
-      {/* <section className="branch-s2">
-        <div className="container">
-          <div className="branch-s2-content">
-            <Gallery images={images} />
+      {branch && (
+        <section className="branch-s2">
+          <div className="container">
+            <div className="branch-s2-content">
+              <Gallery images={branch.images} />
+            </div>
           </div>
-        </div>
-      </section> */}
-
+        </section>
+      )}
       <div className="branch-s3">
         <div className="container">
-          <FacilitiesList facilitiesData={FacilitiesContent} />
+          <FacilitiesList facilitiesData={facilitiesContent} />
         </div>
       </div>
       <Footer />
