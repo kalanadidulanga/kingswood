@@ -51,6 +51,7 @@ export default function Home() {
   const [FacilitiesContent, setFacilitiesContent] = useState([]);
   const [schoolInfo, setSchoolInfo] = useState([]);
   const [branchesList, setBranches] = useState([]);
+  const [reviews, setReviews] = useState([]);
 
   const getSliders = async () => {
     try {
@@ -118,7 +119,7 @@ export default function Home() {
       });
 
       if (response.success) {
-        console.log(response.data.branches);
+        // console.log(response.data.branches);
         setBranches(response.data.branches);
       } else {
         toast.error(response.data?.message || "Failed to fetch branches");
@@ -129,11 +130,30 @@ export default function Home() {
     }
   };
 
+  const fetchReviews = async () => {
+    try {
+      const { data } = await fetch({
+        url: "/api/reviews",
+        method: "GET",
+      });
+      if (data.success) {
+        // console.log(data.data.reviews);
+        setReviews(data.data.reviews);
+      } else {
+        throw new Error(data.error || "Failed to fetch reviews");
+      }
+    } catch (error) {
+      console.error("Error fetching reviews:", error);
+      toast.error("Failed to fetch reviews");
+    }
+  };
+
   useEffect(() => {
     getSliders();
     getFacilities();
     getSchoolInfo();
     fetchBranches();
+    fetchReviews();
   }, []);
 
 
@@ -360,7 +380,7 @@ export default function Home() {
       <Branch branches={branchesList}></Branch>
       <Success successItems={successItems}></Success>
       {/* <Awards awardItems={awardItems}></Awards> */}
-      <Review reviewItems={reviewItems}></Review>
+      <Review reviewItems={reviews}></Review>
       <Footer />
     </>
   );

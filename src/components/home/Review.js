@@ -121,11 +121,11 @@ export default function Review(props) {
                                                         <div className="review-details">
                                                             <div className="review-details-content-1">
                                                                 <div className="review-details-profile">
-                                                                    <img src={item.profileImage} alt="" />
+                                                                    <img src={item.profileImage || "/person.jpg"} alt="" />
                                                                 </div>
                                                                 <div className="review-name">
                                                                     <h1>{item.name}</h1>
-                                                                    <p>{item.role}</p>
+                                                                    <p>{item.email}</p>
                                                                 </div>
                                                             </div>
                                                             <div className="review-details-content-2">
@@ -148,7 +148,7 @@ export default function Review(props) {
                                                             </div>
                                                         </div>
                                                         <div className="review-content-2-description">
-                                                            <p>{item.description}</p>
+                                                            <p>{item.content}</p>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -1,6 +1,9 @@
 import React from 'react'
+import { useSocial } from '../../libs/useSocialStore';
 
 export default function Header() {
+    const { socialLinks, setSocialLinks } = useSocial();
+
     return (
         <>
             <header>
@@ -25,22 +28,22 @@ export default function Header() {
                         <div className='header-content-2'>
                             <ul>
                                 <li>
-                                    <a href="">
+                                    <a href={socialLinks.facebook} target='_blank'>
                                         <i class="ri-facebook-fill"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href={socialLinks.instagram} target='_blank'>
                                         <i class="ri-instagram-fill"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href={socialLinks.youtube} target='_blank'>
                                         <i class="ri-youtube-fill"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href={socialLinks.twitter} target='_blank'>
                                         <i class="ri-linkedin-fill"></i>
                                     </a>
                                 </li>

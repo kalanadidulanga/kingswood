@@ -26,7 +26,8 @@
     "swiper": "^11.1.14",
     "three": "^0.170.0",
     "vanilla-tilt": "^1.8.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zustand": "^5.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

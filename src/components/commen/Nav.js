@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 import Header from "./Header";
 import "./Nav.css";
 import "./Header.css";
 import "./Menu.css";
+import useAxios from "../../hooks/useAxios";
+import toast from "react-hot-toast";
+import { useSocial } from "../../libs/useSocialStore";
 
 export default function Nav() {
+  const { fetch, loading } = useAxios();
   const [menu, setMenu] = useState("");
   const [background, setBackground] = useState("");
+
+  const { socialLinks, setSocialLinks } = useSocial();
 
   const menuClick = () => {
     console.log("hello");
@@ -20,6 +26,42 @@ export default function Nav() {
       setBackground("active");
     }
   };
+
+  const getSocialsData = async () => {
+    try {
+      const { data } = await fetch({
+        url: "/api/website/social",
+        method: "GET",
+      });
+      if (data.success) {
+        console.log(data.data);
+        setSocialLinks(data.data);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      toast.error("Failed to fetch data");
+    }
+  };
+
+  const getContactsData = async () => {
+    try {
+      const { data } = await fetch({
+        url: "/api/website/contact",
+        method: "GET",
+      });
+      if (data.success) {
+        console.log(data.data);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      toast.error("Failed to fetch data");
+    }
+  };
+
+  useEffect(() => {
+    getSocialsData();
+    getContactsData();
+  }, []);
 
   const window = () => {
     setMenu("");

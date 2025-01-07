@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import map from '../../images/branch/map2.svg'
 import branch1 from '../../images/branch/image1.jpg'
 import branch2 from '../../images/branch/image2.jpg'
+import { getImageUrl } from '../../utils/getImageUrl';
 
 
 export default function Branch(props) {
@@ -64,10 +65,10 @@ export default function Branch(props) {
                         {props.branches.map((branch, index) => (
                             <div key={index} className='branch-list'>
                                 <div className='branch-name'>
-                                    <h1>{branch.name}</h1>
+                                    <h1>{branch.title}</h1>
                                 </div>
                                 <div className='branch-image'>
-                                    <img src={branch.image} alt={branch.name} />
+                                    <img src={getImageUrl(branch.imageUrl)} alt={branch.name} />
                                 </div>
                             </div>
                         ))}
