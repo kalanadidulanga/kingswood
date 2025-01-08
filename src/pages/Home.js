@@ -53,6 +53,7 @@ export default function Home() {
   const [branchesList, setBranches] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
+  const [awards, setAwards] = useState([]);
 
   const getSliders = async () => {
     try {
@@ -166,6 +167,24 @@ export default function Home() {
     }
   };
 
+  const fetchAwards = async () => {
+    try {
+      const response = await fetch({
+        url: "/api/awards",
+        method: "GET",
+      });
+
+      if (response.data?.success) {
+        console.log(response.data.data.awards);
+        setAwards(response.data.data.awards);
+      } else {
+        toast.error(response.data?.message || "Failed to fetch awards");
+      }
+    } catch (err) {
+      toast.error("An error occurred while fetching awards.");
+    }
+  };
+
   useEffect(() => {
     getSliders();
     getFacilities();
@@ -173,6 +192,7 @@ export default function Home() {
     fetchBranches();
     fetchReviews();
     fetchEvents();
+    fetchAwards();
   }, []);
 
 
@@ -380,6 +400,7 @@ export default function Home() {
       {/* <EventList eventItems={eventContent}></EventList> */}
       <Branch branches={branchesList}></Branch>
       <Success successItems={successItems}></Success>
+      {awards.length > 0 && <Awards awardItems={awards}></Awards>}
       {/* <Awards awardItems={awardItems}></Awards> */}
       <Review reviewItems={reviews}></Review>
       <Footer />

@@ -8,6 +8,7 @@ import './Awards.css'
 
 
 import Title from '../commen/Title';
+import { getImageUrl } from '../../utils/getImageUrl';
 
 export default function Awards(props) {
 
@@ -71,7 +72,7 @@ export default function Awards(props) {
                                 <div className='item' key={index}>
                                     <div className='item-content'>
                                         <div className='award-item'>
-                                            <img src={item.imgSrc} alt="" />
+                                            <img src={getImageUrl(item.imageUrl)} alt={item.title} />
                                             <div className='award-details'>
                                                 <div>
                                                     <h1>{item.title}</h1>
