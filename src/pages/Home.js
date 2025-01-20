@@ -42,11 +42,12 @@ import { eventContent } from "../constants/data.js";
 import useAxios from "../hooks/useAxios"; // Import the custom Axios hook
 import { toast } from "react-hot-toast";
 import { icon } from "leaflet";
+import { Loader2 } from "lucide-react";
 
 
 export default function Home() {
   const { fetch, loading } = useAxios();
-
+  const [isloading, setIsloading] = useState(true);
   const [slideContent, setSlideContent] = useState([]);
   const [FacilitiesContent, setFacilitiesContent] = useState([]);
   const [schoolInfo, setSchoolInfo] = useState([]);
@@ -379,6 +380,18 @@ export default function Home() {
     }
   ];
 
+  if (loading) {
+    return (
+      <>
+        <Nav />
+        <div className=" flex justify-center items-center w-full pt-16">
+          <Loader2 className="animate-spin mr-3" />
+          <p>Loading...</p>
+        </div>
+        <Footer />
+      </>
+    )
+  }
 
   return (
     <>

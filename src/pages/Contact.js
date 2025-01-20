@@ -41,6 +41,17 @@ export default function Contact() {
         e.preventDefault();
         try {
             const formDataObject = new FormData();
+
+            if (formData.name === "" || formData.phone === "" || formData.email === "" || formData.subject === "" || formData.message === "") {
+                toast.error("Please fill in all the fields.");
+                return;
+            }
+
+            if (!formData.phone.match(/^(?:0|94|\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|4|5|6|7|8)\d)\d{6}$/)) {
+                toast.error("Please enter a valid phone number.");
+                return;
+            }
+
             Object.entries(formData).forEach(([key, value]) =>
                 formDataObject.append(key, value)
             );
@@ -104,6 +115,7 @@ export default function Contact() {
                                     onFocus={() => clickInput("input1")}
                                     onBlur={(e) => blurInput("input1", e.target.value)}
                                     onChange={handleChange}
+                                    required
                                 />
                                 <p className={activeInputs.input1 ? "active" : ""}>
                                     Full Name <span>*</span>
@@ -116,12 +128,14 @@ export default function Contact() {
                                     {/* Sub-input 1 */}
                                     <div className="input2-c1">
                                         <input
-                                            type="text"
+                                            type="number"
                                             name="phone"
                                             value={formData.phone}
                                             onFocus={() => clickInput("input2-c1")}
                                             onBlur={(e) => blurInput("input2-c1", e.target.value)}
                                             onChange={handleChange}
+                                            required
+                                            pattern="[0-9]{10}"
                                         />
                                         <p
                                             className={
@@ -141,6 +155,7 @@ export default function Contact() {
                                             onFocus={() => clickInput("input2-c2")}
                                             onBlur={(e) => blurInput("input2-c2", e.target.value)}
                                             onChange={handleChange}
+                                            required
                                         />
                                         <p
                                             className={
@@ -162,6 +177,7 @@ export default function Contact() {
                                     onFocus={() => clickInput("input3")}
                                     onBlur={(e) => blurInput("input3", e.target.value)}
                                     onChange={handleChange}
+                                    required
                                 />
                                 <p className={activeInputs.input3 ? "active" : ""}>
                                     Subject <span>*</span>
@@ -176,6 +192,7 @@ export default function Contact() {
                                     onFocus={() => clickInput("input4")}
                                     onBlur={(e) => blurInput("input4", e.target.value)}
                                     onChange={handleChange}
+                                    required
                                 ></textarea>
                                 <p className={activeInputs.input4 ? "active" : ""}>
                                     Message <span>*</span>

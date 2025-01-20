@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Contact.css";
 import "./Admission.css";
 
@@ -23,7 +23,29 @@ export default function Admission() {
     });
 
     const [activeInputs, setActiveInputs] = useState({});
+    const [branches, setBranches] = useState([]);
     const { fetch, loading } = useAxios();
+
+    const getBranches = async () => {
+        try {
+            const { data } = await fetch({
+                url: "/api/branches",
+                method: "GET",
+            });
+            if (data.success) {
+                setBranches(data.data.branches);
+            } else {
+                throw new Error(data.message || "Failed to fetch school info");
+            }
+        } catch (error) {
+            console.error("Error fetching school info:", error);
+            toast.error("Failed to fetch school info. Please try again.");
+        }
+    }
+
+    useEffect(() => {
+        getBranches();
+    }, []);
 
     // Handle input change
     const handleChange = (e) => {
@@ -39,6 +61,16 @@ export default function Admission() {
         e.preventDefault();
 
         try {
+
+            if (formData.parentName === "" || formData.parentContact === "" || formData.parentEmail === "" || formData.campus === "" || formData.childAge === "" || formData.childName === "") {
+                toast.error("Please fill in all the fields.");
+                return;
+            }
+
+            if (!formData.parentContact.match(/^(?:0|94|\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|4|5|6|7|8)\d)\d{6}$/)) {
+                toast.error("Please enter a valid phone number.");
+                return;
+            }
 
             const formDataObject = new FormData();
             Object.entries(formData).forEach(([key, value]) =>
@@ -126,7 +158,7 @@ export default function Admission() {
 
                             <div className="input1 input mt-20">
                                 <input
-                                    type="text"
+                                    type="number"
                                     name="parentContact"
                                     value={formData.parentContact}
                                     onChange={handleChange}
@@ -162,10 +194,9 @@ export default function Admission() {
                                     required
                                 >
                                     <option value="">Select Campus</option>
-                                    <option value="chilaw">Chilaw (Bangadeniya)</option>
-                                    <option value="anamaduwa">Anamaduwa</option>
-                                    <option value="negombo">Negombo</option>
-                                    <option value="anuradhapura">Anuradhapura</option>
+                                    {branches.map((branch) => (
+                                        <option value={branch.title} key={branch.id}>{branch.title}</option>
+                                    ))}
                                 </select>
                             </div>
 
@@ -200,7 +231,7 @@ export default function Admission() {
                             </div>
                             <div className="contact-button">
                                 <button type="submit" disabled={loading} className=" bg-primary text-white px-5 py-2 rounded-md hover:bg-primary/80">
-                                    {loading ? "Submitting..." : "Submit Application"}
+                                    {loading ? "Loading..." : "Submit Application"}
                                 </button>
                             </div>
                         </div>
